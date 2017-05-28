@@ -1,0 +1,102 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/slider/slider.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+.slider__wrapper {
+    position: relative;   
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+
+
+.slider__button {
+    position: absolute;
+    top: 80px;
+    width: 40px;
+    font-size: @font-size--big + 2;
+    line-height: @font-size--middle + 2; 
+    color: @white;     
+    border: none;
+    outline: none;
+    background-color: transparent;
+    z-index: 1;
+    cursor: pointer;
+    transition: all @transition-time linear;
+    &:hover {
+        color: @color-hover;
+    }    
+    &--prev {
+        left: 5px;        
+    }
+    &--next {
+        right: 5px;        
+    }
+}
+
+.slider__dots {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;   
+    list-style: none;
+    li {        
+        margin-right: 10px;        
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover button {
+            border-color: @color-hover;            
+        }        
+    }
+    button {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        padding: 2px;
+        font-size: 0;
+        border: 1px solid @gray-lighten;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: all @transition-time linear;
+        &::before {
+            position: absolute;
+            top: 2px;
+            left: 2px;            
+            content: '';
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: all @transition-time linear;
+        }
+    }    
+}
+
+.slick-active button::before{          
+    background-color: @gray-lighten;       
+}
+
+.slick-active:hover button::before{          
+    background-color: @color-hover;       
+}
+
+@media(min-width: @screen-sm) {
+    .slider__button {
+        top: 100px;
+    }
+}
+
+@media(min-width: @screen-md) {
+    .slider__button {
+        top: 200px;
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .slider__button {
+        top: 400px;
+    }
+}
