@@ -50,11 +50,19 @@
   }
 }
 
+.btn-gradient() {
+  border: 1px solid @color-main;
+  background-color: @color-main;
+  background-image: linear-gradient( 90deg, @color-main 0%, @color-main 100%);
+  box-shadow: 3px 4px 5px 0px fade(@black, 30%),inset 0px 0px 3px 0px @gray-lighten; 
+}
 // Примесь для шрифта
 
 .font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
   font-family: '@{fontName}';  
-  src: url('/fonts/@{urlName}/@{urlName}.woff') format('woff'),url('/fonts/@{urlName}/@{urlName}.woff') format('woff');    
+  src: url('../fonts/@{urlName}.woff') format('woff'),url('../fonts/@{urlName}.woff2') format('woff2');    
     font-weight: @weight;
     font-style: @style;
 }
+
+
