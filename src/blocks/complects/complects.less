@@ -1,0 +1,40 @@
+.complects__item {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &--accessories::before {
+        .sprite-complects(-5px, -5px, 126px, 119px);
+    }
+
+    &--cupboard::before {
+        .sprite-complects(-5px, -134px, 102px, 115px);
+    }
+
+    &--handle::before {
+        .sprite-complects(-5px, -259px, 151px, 81px);
+    }
+
+    &--hob::before {
+        .sprite-complects(-5px, -350px, 149px, 102px);
+    }
+
+    &--hood::before {
+        .sprite-complects(-5px, -462px, 156px, 90px);
+    }
+
+    &--oven::before {
+        .sprite-complects(-5px, -562px, 103px, 116px);
+    }
+
+    &--sink::before {
+        .sprite-complects(-5px, -688px, 153px, 90px);
+    }
+
+    &--table::before {
+        .sprite-complects(-5px, -788px, 114px, 117px);
+    }
+}

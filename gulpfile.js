@@ -59,7 +59,7 @@ gulp.task('clean', function () {
 gulp.task('copy', function () {
     console.log('Копирование файлов')
     return gulp.src([
-            dirs.source + '/image/**',
+            dirs.source + '/images/**',
             dirs.source + '/fonts/**/*.{woff, woff2}',
             dirs.source + '/*.html',
             dirs.source + '/*.php'
@@ -125,7 +125,7 @@ gulp.task('symbols', function () {
             inlineSvg: true
         }))
         .pipe(rename('symbols.svg'))
-        .pipe(gulp.dest(dirs.build + '/image'));
+        .pipe(gulp.dest(dirs.build + '/images'));
 });
 
 gulp.task('jade', function () {

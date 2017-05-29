@@ -1,5 +1,9 @@
-section.slider.wrap
-    .slider__wrapper        
-        -var slideLength = 7;
-        -for(var i = 1; i<slideLength; i++)
-            img.slider__picture(src='image/slider/slide-' + i + '.jpg' width="" height="")        
+section.slider
+    .row
+        .slider__wrapper        
+            -var slideLength = 3;
+            -for(var i = 1; i<slideLength; i++)
+                .slider__item
+                    a.slider__button.slider__button--cart.btn 99 900 руб.
+                    img.slider__picture(src='images/sliders/slide-' + i + '.png' width="1600" height="624")        
+            

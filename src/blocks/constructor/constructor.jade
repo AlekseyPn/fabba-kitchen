@@ -1,0 +1,50 @@
+section.constructor
+    .container
+        .constructor__location
+            .constructor__picture.col-lg-4.col-md-4.col-xs-12
+                img(src="images/constructor/kitchen-1.jpg")
+            .constructor__picture.col-lg-4.col-md-4.col-xs-12
+                img(src="images/constructor/kitchen-2.jpg")
+            .constructor__picture.col-lg-4.col-md-4.col-xs-12
+                img(src="images/constructor/kitchen-3.jpg")
+        .constructor__row
+            button.constructor__button#calculator Расчитать стоимость            
+            button.constructor__button#design Индивидуальный дизайн
+        .constructor__view
+            p.constructor__price
+            .constructor__preview
+                img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="default")
+                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="night")
+                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="lock")
+                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="ldsp")
+                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="mdf")
+                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="plastic")
+            .constructor__col.col-md-6.col-lg-6.col-xs-12
+                h2.constructor__facade Фасады
+                .constructor__radio-input
+                    input(type="radio" name="facade" id="facade-1" checked)
+                    input(type="radio" name="facade" id="facade-2")
+                    input(type="radio" name="facade" id="facade-3")
+                .constructor__label
+                    label.constructor__facade.constructor__facade--ldsp(for="facade-1") Лдсп
+                    label.constructor__facade.constructor__facade--mdf(for="facade-2") Мдф
+                    label.constructor__facade.constructor__facade--plastic(for="facade-3") Пластик
+                p.constructor__text +120 вариантов цветов и структур
+            .constructor__col.col-md-6.col-lg-6.col-xs-12
+                h2.constructor__facade Гамма
+                .constructor__radio-input
+                    input(type="radio" name="color" id="color-1" checked)
+                    input(type="radio" name="color" id="color-2")
+                    input(type="radio" name="color" id="color-3")
+                    input(type="radio" name="color" id="color-4")
+                    input(type="radio" name="color" id="color-5")
+                .constructor__label
+                    label.constructor__facade.constructor__facade--white(for="color-1") Белый цвет
+                    label.constructor__facade.constructor__facade--green(for="color-2")  Зеленый цвет
+                    label.constructor__facade.constructor__facade--blue(for="color-3") Голубой цвет 
+                    label.constructor__facade.constructor__facade--red(for="color-4") Красный цвет
+                    label.constructor__facade.constructor__facade--gray-dark(for="color-5") Темно-серый цвет
+                p.constructor__text +120 вариантов цветов и структур
+
+                
+            

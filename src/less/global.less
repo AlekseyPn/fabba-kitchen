@@ -9,7 +9,7 @@ html {
 } 
 
 
-body {
+.page {
     font-size: @font-size;
     font-family: @font-family;
     font-weight: 400;
@@ -68,13 +68,19 @@ h6 {
     .container-fluid;    
 }
 
-.flex-wrap {
+.flex-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;    
     &--col {
         flex-direction: column;        
     }
+}
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;    
+    .btn-gradient();
 }
 
 // Цикл для сетки в процентах мобильная, десктопная и планшетная;
