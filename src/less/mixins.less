@@ -54,7 +54,19 @@
   border: 1px solid @color-main;
   background-color: @color-main;
   background-image: linear-gradient( 90deg, @color-main 0%, @color-main 100%);
-  box-shadow: 3px 4px 5px 0px fade(@black, 30%),inset 0px 0px 3px 0px @gray-lighten; 
+  box-shadow: 3px 4px 5px 0px fade(@black, 30%),inset 0px 0px 3px 0px @gray-lighten;
+  transition: all @transition-time ease-out;
+  outline: none;
+  &:hover,
+  &:focus {
+      color: @black;
+      text-decoration: none;
+      border-color: @black; 
+  }
+  &:active{
+      transform: translate(2px, 2px);
+      box-shadow: none;
+  } 
 }
 // Примесь для шрифта
 
@@ -80,9 +92,47 @@
     background-position: @x @y;    
 }
 
-// .sprite {    
+.heading() {
+    width: 100%;
+    text-align: center;               
+        &--line::after {
+            content: "";
+            position: relative;
+            display: block;
+            top: -40px;            
+            width: 100%;
+            height: 1px;
+            background-color: @black;
+            z-index: 1;            
+        }
+        h2 {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            padding-right: 22px;
+            padding-left: 22px;
+            font-size: @font-size--headings - 0.5;
+            font-weight: @font-weight--bold;                
+            text-transform: uppercase;
+            background-color: @white;
+            overflow: hidden;
+            z-index: 2; 
+        }
+  @media(min-width: @screen-md) {
+        &--line::after {
+          top: -48px;
+        }
+        h2 {
+          font-size: @font-size--headings;
+        }
+  }
+}
 
-//     &-arrow-constructor {
+// .sprite {
+//     background-image: url(spritesheet.png);    background-repeat: no-repeat;
+//     display: block;
+
+//     &.sprite-arrow-constructor {
 //         .stitches-sprite(-20px, -20px, 45px, 33px);
 //     }
 
@@ -90,70 +140,71 @@
 //         .stitches-sprite(-20px, -93px, 53px, 54px);
 //     }
 
+//     &.sprite-icon-cart {
+//         .stitches-sprite(-20px, -187px, 28px, 26px);
+//     }
+
 //     &.sprite-icon-phone {
-//         .stitches-sprite(-20px, -187px, 34px, 37px);
+//         .stitches-sprite(-20px, -253px, 34px, 37px);
 //     }
 
 //     &.sprite-instagram-icon {
-//         .stitches-sprite(-20px, -264px, 53px, 54px);
+//         .stitches-sprite(-20px, -330px, 53px, 54px);
 //     }
 
 //     &.sprite-lock {
-//         .stitches-sprite(-20px, -358px, 14px, 18px);
+//         .stitches-sprite(-20px, -424px, 14px, 18px);
 //     }
 
 //     &.sprite-lock-hover {
-//         .stitches-sprite(-20px, -416px, 14px, 18px);
+//         .stitches-sprite(-20px, -482px, 14px, 18px);
 //     }
 
 //     &.sprite-night {
-//         .stitches-sprite(-20px, -474px, 16px, 20px);
+//         .stitches-sprite(-20px, -540px, 16px, 20px);
 //     }
 
 //     &.sprite-night-hover {
-//         .stitches-sprite(-20px, -534px, 16px, 20px);
+//         .stitches-sprite(-20px, -600px, 16px, 20px);
 //     }
 
 //     &.sprite-slider-left {
-//         .stitches-sprite(-20px, -594px, 33px, 46px);
+//         .stitches-sprite(-20px, -660px, 33px, 46px);
 //     }
 
 //     &.sprite-slider-left-hover {
-//         .stitches-sprite(-20px, -680px, 33px, 46px);
+//         .stitches-sprite(-20px, -746px, 33px, 46px);
 //     }
 
 //     &.sprite-slider-right {
-//         .stitches-sprite(-20px, -766px, 32px, 46px);
+//         .stitches-sprite(-20px, -832px, 32px, 46px);
 //     }
 
 //     &.sprite-slider-right-hover {
-//         .stitches-sprite(-20px, -852px, 32px, 46px);
+//         .stitches-sprite(-20px, -918px, 32px, 46px);
 //     }
 
 //     &.sprite-sun {
-//         .stitches-sprite(-20px, -938px, 20px, 23px);
+//         .stitches-sprite(-20px, -1004px, 20px, 23px);
 //     }
 
 //     &.sprite-sun-hover {
-//         .stitches-sprite(-20px, -1001px, 20px, 23px);
+//         .stitches-sprite(-20px, -1067px, 20px, 23px);
 //     }
 
 //     &.sprite-tab-arrow-down {
-//         .stitches-sprite(-20px, -1064px, 45px, 33px);
+//         .stitches-sprite(-20px, -1130px, 45px, 33px);
 //     }
 
 //     &.sprite-tab-arrow-up {
-//         .stitches-sprite(-20px, -1137px, 45px, 33px);
+//         .stitches-sprite(-20px, -1203px, 45px, 33px);
 //     }
 
 //     &.sprite-twitter-icon {
-//         .stitches-sprite(-20px, -1210px, 53px, 53px);
+//         .stitches-sprite(-20px, -1276px, 53px, 53px);
 //     }
 
 //     &.sprite-vk-icon {
-//         .stitches-sprite(-20px, -1303px, 54px, 55px);
+//         .stitches-sprite(-20px, -1369px, 54px, 55px);
 //     }
 // }
-
-
-

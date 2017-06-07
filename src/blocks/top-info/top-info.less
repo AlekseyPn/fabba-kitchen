@@ -1,8 +1,49 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/top-info/top-info.less';
-
-@import '../../less/variables.less';     // только для удобства обращения к переменным
-
-
 .top-info {
-  
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: @white;
+    &__num {
+        color: @white;
+    }
+
+    &__link {        
+        position: relative;
+        display: inline-block;        
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: @font-size--tel;
+        color: @color-main;        
+        &--icon::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -40px;
+            .sprite-icon(-20px, -253px, 34px, 37px);
+        }
+        &:hover,
+        &:focus {            
+            color: @color-main;
+            text-decoration: underline;            
+        }
+        &:active {
+            opacity: 0.8;
+        }
+        &:hover .top-info__num {
+            color: @color-main;
+        }
+        
+    }    
+
+    &__text {
+        margin: 0;
+    }
+}
+
+@media(min-width: @screen-md) {
+    .top-info {
+        width: auto;
+        order: 3;
+    }
 }

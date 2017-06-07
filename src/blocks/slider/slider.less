@@ -1,0 +1,109 @@
+.slider{    
+    background-color: @black;
+    &__wrapper {
+        position: relative;        
+        overflow: hidden;
+        .clearfix();
+    }
+    
+    &__item {
+        float: left;
+        position: relative;
+    }
+
+    &__button {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        margin-left: -66px;
+        padding: 5px 20px;        
+        font-weight: @font-weight--bold;
+        text-transform: none;
+        font-style: @font-style;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: none;            
+            .sprite-icon(-20px, -187px, 28px, 26px);
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        list-style: none;
+        font-size: 0;
+        text-align: center;
+        li {
+            display: inline-block;
+            vertical-align: top;            
+            margin-right: 10px;            
+        }
+
+        button{
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            font-size: 0;                       
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            background-color: @white;
+            box-shadow: inset 1px 2px 2px hsla(0, 0%, 0%, 0.54);
+        }
+
+        .slick-active button {
+            background-color: @color-main;
+        }
+    }
+
+}
+
+@media(min-width: @screen-md) {
+    .slider {
+        .row {
+            width: 100%;
+        }
+
+        &__button {
+            bottom: 40px;
+            padding: 15px 40px 15px 90px;
+            margin-left: -150px;
+            font-size: @font-size--headings;
+            &::before {
+                top: 18px;
+                left: 40px;
+                display: block;
+            }
+        }
+        
+        &__dots {
+            bottom: 15px;
+            
+            button {
+                width: 14px;
+                height: 14px;
+                
+            }
+        }
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .slider {
+        &__button {
+            bottom: 115px;
+        }
+
+        &__dots {
+            bottom: 50px;
+        }
+    }
+}

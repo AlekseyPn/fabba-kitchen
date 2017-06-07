@@ -1,23 +1,33 @@
 section.show-inside
     .container
-        h2.show-inside__title.col-xs-12 Что внутри
-        .show-inside__row
-            .show-inside__item.col-xs-12.col-md-3.col-lg-3
+        .show-inside__title.show-inside__title--line
+            h2 Что внутри
+        .show-inside__row.show-inside__row--style--padding-up.show-inside__row--align--justify
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3
                 .show-inside__image
                     img(src="images/facade-example.jpg" width="245" height="230" title="Фасады")
                 a.show-inside__link Фасады
-            .show-inside__item.col-xs-12.col-md-3.col-lg-3
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3
                 .show-inside__image 
                     img(src="images/table-example.jpg" width="245" height="230" title="Столешницы")
                 a.show-inside__link Столешницы
-            .show-inside__item.col-xs-12.col-md-3.col-lg-3
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3
                 .show-inside__image
                     img(src="images/body-example.jpg" width="245" height="230" title="Корпуса")
                 a.show-inside__link Корпуса
-            .show-inside__item.col-xs-12.col-md-3.col-lg-3
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3
                 .show-inside__image
                     img(src="images/furniture-example.jpg" width="245" height="230" title="Фурнитура")
                 a.show-inside__link Фурнитура
+        .show-inside__row
+            .constructor.constructor--bg--none
+                .constructor__label.constructor__label--facade.constructor__label--align--center#show-inside
+                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="show-ldsp" checked="checked")
+                        label.constructor__facade.constructor__facade--material--ldsp(for="show-ldsp") Лдсп
+                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="show-mdf")
+                        label.constructor__facade.constructor__facade--material--mdf(for="show-mdf") Мдф
+                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="show-plastic")
+                        label.constructor__facade.constructor__facade--material.constructor__facade--material--plastic(for="show-plastic") Пластик
         .show-inside__row
             .show-inside__slider
                 .show-inside__slide
@@ -34,5 +44,5 @@ section.show-inside
                     img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
                 .show-inside__slide
                     img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
-        p.show-inside__text Для тех, кто хочет купить кухни в стиле классика на заказ, мы предлагаем широкий ассортимент мебелис фасадами в шпоне разных пород дерева и оттенков. В производстве используется автоматизированная декоративная резка, а также элементы ручной работы. Как правило, это изготовление декоративных элементов и витражей, патинирование фасадов.
+        p.show-inside__text Для тех, кто хочет купить кухни в стиле классика на заказ, мы предлагаем широкий ассортимент мебели с фасадами в шпоне разных пород дерева и оттенков. В производстве используется автоматизированная декоративная резка, а также элементы ручной работы. Как правило, это изготовление декоративных элементов и витражей, патинирование фасадов.
     

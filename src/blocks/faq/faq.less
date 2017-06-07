@@ -1,8 +1,108 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/faq/faq.less';
-
-@import '../../less/variables.less';     // только для удобства обращения к переменным
-
-
 .faq {
-  
+    &__title {
+        width: 100%;        
+        font-size: @font-size--headings;        
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__link {
+        margin-left: 20px;
+        color: @color-main;
+        border-bottom: 5px dotted @color-main;        
+    }
+
+    &__tab {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &__item {
+        position: relative;
+        margin-bottom: 20px;
+        padding: 10px 20px 20px;
+        border: 1px solid @gray-lightest;
+        background-color: fade(@black, 3%);
+        box-shadow: 0 0 5px @gray-lighter;
+        transition: all @transition-time linear;
+        cursor: pointer;
+        
+        &::last-child {
+            margin-bottom: 0;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            display: none;
+            margin-left: -22px;
+            .sprite-icon(-20px, -1130px, 45px, 33px)
+
+        }
+        &--show {            
+            padding-bottom: 0;
+            background-color: @white;
+            &::before {
+                .sprite-icon(-20px, -1203px, 45px, 33px)
+            }
+
+            .faq__head {
+                margin-bottom: 30px;
+            }
+
+            .faq__descr {
+                height: auto;
+                max-height: 900px;
+                padding-top: 20px;
+                padding-bottom: 40px;
+                border-top: 1px solid fade(@black, 10%);
+                transform: translate3d(0,0,0);                
+            }
+        }
+    }
+
+    &__descr {
+        overflow: hidden;
+        height: 0;
+        max-height: 0;       
+        margin: 0;       
+        transition: @transition-time linear;
+    }
+
+    &__head {
+        margin: 0;
+    }
+}
+
+@media(min-width: @screen-sm) {
+    .faq {
+        &__item {
+            display: block;
+            padding-right: 40px;
+            &::before {
+                top: 30px;                
+                left: 92%;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+@media(min-width: @screen-md) {
+    .faq {
+        padding-top: 55px;
+        padding-bottom: 50px;
+        &__item {
+            padding: 35px 60px 30px 40px;
+            &--show {
+                padding-bottom: 0;
+            }
+        }
+
+        &__item--show &__descr {
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+    }
 }

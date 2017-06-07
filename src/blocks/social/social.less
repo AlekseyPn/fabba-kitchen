@@ -1,8 +1,56 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/social/social.less';
-
-@import '../../less/variables.less';     // только для удобства обращения к переменным
-
-
 .social {
-  
+    padding: 30px 10px;
+    background-image: url(../images/bg/social-bg.jpg);
+    background-repeat: repeat;
+    background-position: 0;
+    &__title {
+        width: 100%;        
+        font-size: @font-size--headings;
+        color: hsl(35, 29%, 48%);        
+        text-align: center;
+        text-transform: uppercase;        
+    }    
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    &__link {
+        margin-right: 15px;
+        font-size: 0;
+        border-radius: 50%;
+        &:hover {
+            box-shadow: 2px 2px 3px 0px @gray;
+        }
+        &:active {
+            transform: translate(2px, 2px)
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--fb {
+            .sprite-icon(-20px, -93px, 53px, 54px)
+        }
+
+        &--vk {
+            .sprite-icon(-20px, -1369px, 54px, 55px)
+        }
+        &--tw {
+            .sprite-icon(-20px, -1276px, 53px, 53px)
+        }
+        &--insta {
+            .sprite-icon(-20px, -330px, 53px, 54px)
+        }
+    }
+}
+
+@media(min-width: @screen-md) {
+    .social {
+        padding-bottom: 60px;
+    }
 }

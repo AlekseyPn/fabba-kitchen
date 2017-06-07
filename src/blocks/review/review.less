@@ -1,8 +1,192 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/review/review.less';
+.review {    
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
 
-@import '../../less/variables.less';     // только для удобства обращения к переменным
+    &__hidden {
+        display: none;
+    }
 
+    &__title {
+        .heading();
+    }    
 
-.review {
-  
+    &__wrapper {      
+        position: relative;  
+        padding-top: 500px;                     
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow: hidden;        
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 570px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: @font-size - 0.2;
+        box-shadow: 0 0 13px @gray-lighten;
+        background-color: @white;
+        box-sizing: border-box;                      
+    }
+    
+    &__text {        
+        position: relative;
+        font-style: @font-style;
+        font-weight: @font-weight--normal;
+        box-sizing: border-box;        
+        &::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            margin-left: -70px;
+            width: 141px;
+            height: 100px;
+            background-image: url(../images/quotes.png);
+            opacity: 0.8;
+            z-index: -1;
+        }
+    }
+
+    &__author {
+        margin-top: 20px;
+        text-align: right;
+    }
+
+    &__picture {        
+        text-align: center;
+    }
+
+    &__button {
+        position: absolute;
+        top: 30%;
+        left: 13.8%;
+        width: 72%;
+        height: 46px;
+
+    }
+
+    &__arrow{
+        position: absolute;
+        display: none;
+        width: 32px;
+        height: 46px;
+        border: none;
+        outline: none;
+        background-color: transparent;        
+        z-index: 1;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &--prev {            
+            left: 10px;
+            margin-top: -23px;
+            .sprite-icon(-20px, -746px, 33px, 46px);            
+        }
+
+        &--next {            
+            right: 10px;
+            margin-top: -23px;
+            .sprite-icon(-20px, -918px, 33px, 46px);            
+        }
+    }
+}
+
+@media(min-width: @screen-sl) {
+    .review {
+
+        &__wrapper {
+            padding-left: 40px;
+            padding-right: 40px;
+            overflow: visible;
+        }
+
+        &__picture {            
+            width: 70px;
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        &__item {                        
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            width: 60%;                       
+            padding-left: 23px;
+            padding-right: 40px;            
+        }
+
+        &__text {          
+            width: 61%;            
+            margin: 0;
+            padding-top: 40px;
+            &::before {
+                top: 30px;
+            }
+        }
+    }
+}
+
+@media(min-width: @screen-md) {
+    .review {
+
+        &__text {
+            width: 55%;
+        }        
+
+        &__text::before {
+            top: 20px;
+        }
+
+        &__button {
+            top: 40%;
+            width: 72%;            
+        }
+
+        &__arrow {
+            display: block;
+            top: 58%;
+            z-index: 6;
+        }       
+
+        &__wrapper {
+            padding-top: 450px;
+        }
+
+        &__picture {            
+            width: 131px;
+            height: 131px;
+            margin-right: 30px;
+        }
+
+        &__text {
+            font-size: @font-size;
+        }
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .review {
+        &__text {
+            width: 61%;
+        }
+
+        &__hidden {
+            display: inline;
+        }
+
+        &__button {
+            top: 56%;            
+            left: 14.8%;
+            width: 66%;
+        }
+    }
 }

@@ -41,6 +41,8 @@
     "slick-carousel": "^1.6.0"
   },
   "dependencies": {
+    "gulp-imagemin": "^3.3.0",
+    "imagemin-pngquant": "^5.0.1",
     "jquery": "^3.1.1",
     "slick-carousel": "1.6.0"
   },

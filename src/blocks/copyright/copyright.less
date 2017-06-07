@@ -1,8 +1,36 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/copyright/copyright.less';
+.copyright {    
+    background-color: @gray-dark;
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
+    &__text,
+    &__payment {
+        flex-basis: auto;
+    }
+    &__text {
+        color: @white;
+    }
+    &__image {
+        margin-right: 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
 
-@import '../../less/variables.less';     // только для удобства обращения к переменным
+@media(min-width: @screen-sl) {
+    .copyright {
+        .container {
+            justify-content: space-around;
+        }
+    }
+}
 
-
-.copyright {
-  
+@media(min-width: @screen-md) {
+    .copyright {
+        .container {
+            justify-content: space-between;
+        }
+    }
 }

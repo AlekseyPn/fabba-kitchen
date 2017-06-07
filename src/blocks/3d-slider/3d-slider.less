@@ -1,0 +1,135 @@
+
+.bee3D--parent {
+    -webkit-perspective: 600px;
+    perspective: 600px
+}
+
+.bee3D--slide {
+    position: absolute;
+    -webkit-transform: none;
+    transform: none;
+    top: 100px;
+    left: 5%;
+    right: 5%;
+    opacity: 0;
+    transition: opacity 0.7s ease, -webkit-transform .7s ease;
+    transition: opacity 0.7s ease, transform .7s ease;
+    transition: opacity 0.7s ease, transform .7s ease, -webkit-transform .7s ease
+}
+
+.bee3D--slide__inactive {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none
+}
+
+.bee3D--slide__active {
+    opacity: 1;
+    z-index: 5;
+}
+
+.bee3D--inner {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.draggable {
+    cursor: move;
+    cursor: grab;
+    cursor: -webkit-grab
+}
+
+.draggable:active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing
+}
+
+.bee3D--effect__arc .bee3D--before {
+    
+    transform: translate(-51%, -70%) scale(0.7);
+    opacity: 1;
+    z-index: 2;
+}
+
+.bee3D--effect__arc .bee3D--before-2 {
+    display: none;
+    transform: translate(-51%, -70%) scale(0.7);
+    opacity: 0;
+    z-index: 3;
+}
+
+.bee3D--effect__arc .bee3D--before-1 {
+    
+    transform: translate(-41%, -35%) scale(0.8);
+    opacity: 1;
+    z-index: 4;
+}
+
+.bee3D--effect__arc .bee3D--after {
+    
+    transform: translate(51%, -70%) scale(0.7);
+    opacity: 1;
+    z-index: 2;
+}
+
+.bee3D--effect__arc .bee3D--after-1 {    
+    transform: translate(41%, -35%) scale(0.8);
+    opacity: 1;
+    z-index: 4;   
+}
+
+.bee3D--effect__arc .bee3D--after-2 {
+    display: none;    
+    transform: translate(51%, -70%) scale(0.7);
+    opacity: 0;
+    z-index: 3;
+}
+
+.bee3D--effect__arc .bee3D--after-3,
+.bee3D--effect__arc .bee3D--before-3,
+.bee3D--effect__arc .bee3D--after-4,
+.bee3D--effect__arc .bee3D--before-4 {
+    display: none;
+}
+
+@media(min-width: @screen-sm) {
+    .bee3D--slide {
+        left: 20%;
+        right: 20%;
+    }
+}
+
+@media(min-width: @screen-sl) {
+    .bee3D--slide {
+        left: 20%;
+        right: 0;
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .bee3D--effect__arc .bee3D--after-2,
+    .bee3D--effect__arc .bee3D--before-2,
+    .bee3D--effect__arc .bee3D--after-3,
+    .bee3D--effect__arc .bee3D--before-3,
+    .bee3D--effect__arc .bee3D--after-4,
+    .bee3D--effect__arc .bee3D--before-4 {
+        display: flex;
+        opacity: 1;
+    }
+
+    .bee3D--effect__arc .bee3D--after-1 {
+        transform: translate(41%,-35%)  scale(0.8);
+    }
+
+    .bee3D--effect__arc .bee3D--before-1 {
+        transform: translate(-41%,-35%)  scale(0.8);
+    }
+
+    .bee3D--slide {
+        top: 160px;
+    }     
+
+}

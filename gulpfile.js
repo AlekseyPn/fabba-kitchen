@@ -33,6 +33,7 @@ gulp.task('style', function () {
         .pipe(postcss([
             autoprefixer({
                 browsers: [
+                    '> 1%',
                     'last 1 version',
                     'last 2 Chrome versions',
                     'last 2 Firefox versions',
@@ -59,10 +60,10 @@ gulp.task('clean', function () {
 gulp.task('copy', function () {
     console.log('Копирование файлов')
     return gulp.src([
-            dirs.source + '/images/**',
             dirs.source + '/fonts/**/*.{woff, woff2}',
             dirs.source + '/*.html',
-            dirs.source + '/*.php'
+            dirs.source + '/*.php',
+            dirs.source + '/global/js/*.js'
         ], {
             base: dirs.source
         })
@@ -72,7 +73,7 @@ gulp.task('copy', function () {
 
 gulp.task('clean-icons-folder', function () {
     console.log('Удаляем папку icons')
-    return del(dirs.build + '/image/icons');
+    return del(dirs.build + '/images/icon');
 });
 
 gulp.task('jshandler', function () {
@@ -88,12 +89,19 @@ gulp.task('jshandler', function () {
 
 gulp.task('images', function () {
     console.log('Оптимизизация изображений');
-    return gulp.src(dirs.build + '/images/**/*.{png,jpg,gif}')
-        .pipe(newer(dirs.build + '/images'))
+    return gulp.src(dirs.source + '/images/**/*.{png,jpg,gif}')
+        .pipe(newer(dirs.build + '/images/**/*.{png,jpg,gif}'))
         .pipe(image({
-            mozjpeg: false,
-            jpegoptim: false,
-            jpegRecompress: true
+            pngquant: true,
+            optipng: false,
+            zopflipng: true,
+            jpegRecompress: false,
+            jpegoptim: true,
+            mozjpeg: true,
+            guetzli: false,
+            gifsicle: true,
+            svgo: true,
+            concurrent: 10
         }))
         .pipe(gulp.dest(dirs.build + '/images'));
 });
@@ -102,12 +110,19 @@ gulp.task('watch-images', function () {
     console.log('Изменение в папке изображений, сжимаю, копирую!')
     return gulp.src([dirs.source + '/images/**/*.{png,jpg,gif}', dirs.source + '/image/*.{png,jpg,gif}'])
         .pipe(gulp.dest(dirs.build + '/images'))
-        .pipe(newer(dirs.build + '/images'))       
+        .pipe(newer(dirs.build + '/images'))
         .pipe(image({
-            mozjpeg: false,
-            jpegoptim: false,
-            jpegRecompress: true
-        }))        
+            pngquant: true,
+            optipng: false,
+            zopflipng: true,
+            jpegRecompress: false,
+            jpegoptim: true,
+            mozjpeg: true,
+            guetzli: false,
+            gifsicle: true,
+            svgo: true,
+            concurrent: 10
+        }))
 })
 
 gulp.task('svg-min', function () {

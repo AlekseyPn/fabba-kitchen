@@ -1,50 +1,93 @@
 section.constructor
     .container
         .constructor__location
-            .constructor__picture.col-lg-4.col-md-4.col-xs-12
+            input.constructor__radio.constructor__radio--location#location-1(type="radio" name="location")
+            label.constructor__picture.constructor__picture--location-1.col-lg-4.col-md-4.col-xs-6(for="location-1")
                 img(src="images/constructor/kitchen-1.jpg")
-            .constructor__picture.col-lg-4.col-md-4.col-xs-12
+            input.constructor__radio.constructor__radio--location#location-2(type="radio" name="location")
+            label.constructor__picture.constructor__picture--location-2.col-lg-4.col-md-4.col-xs-6(for="location-2")
                 img(src="images/constructor/kitchen-2.jpg")
-            .constructor__picture.col-lg-4.col-md-4.col-xs-12
+            input.constructor__radio.constructor__radio--location#location-3(type="radio" name="location")
+            label.constructor__picture.constructor__picture--location-3.col-lg-4.col-md-4.col-xs-6(for="location-3")
                 img(src="images/constructor/kitchen-3.jpg")
-        .constructor__row
-            button.constructor__button#calculator Расчитать стоимость            
+        .constructor__handler
+            button.constructor__button#calculator Расчитать стоимость       
             button.constructor__button#design Индивидуальный дизайн
         .constructor__view
-            p.constructor__price
-            .constructor__preview
-                img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="default")
-                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="night")
-                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="lock")
-                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="ldsp")
-                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="mdf")
-                //- img.constructor__picture(src="images/constructor/constructor-preview.jpg" data-preview="plastic")
-            .constructor__col.col-md-6.col-lg-6.col-xs-12
-                h2.constructor__facade Фасады
-                .constructor__radio-input
-                    input(type="radio" name="facade" id="facade-1" checked)
-                    input(type="radio" name="facade" id="facade-2")
-                    input(type="radio" name="facade" id="facade-3")
-                .constructor__label
-                    label.constructor__facade.constructor__facade--ldsp(for="facade-1") Лдсп
-                    label.constructor__facade.constructor__facade--mdf(for="facade-2") Мдф
-                    label.constructor__facade.constructor__facade--plastic(for="facade-3") Пластик
-                p.constructor__text +120 вариантов цветов и структур
-            .constructor__col.col-md-6.col-lg-6.col-xs-12
-                h2.constructor__facade Гамма
-                .constructor__radio-input
-                    input(type="radio" name="color" id="color-1" checked)
-                    input(type="radio" name="color" id="color-2")
-                    input(type="radio" name="color" id="color-3")
-                    input(type="radio" name="color" id="color-4")
-                    input(type="radio" name="color" id="color-5")
-                .constructor__label
-                    label.constructor__facade.constructor__facade--white(for="color-1") Белый цвет
-                    label.constructor__facade.constructor__facade--green(for="color-2")  Зеленый цвет
-                    label.constructor__facade.constructor__facade--blue(for="color-3") Голубой цвет 
-                    label.constructor__facade.constructor__facade--red(for="color-4") Красный цвет
-                    label.constructor__facade.constructor__facade--gray-dark(for="color-5") Темно-серый цвет
-                p.constructor__text +120 вариантов цветов и структур
+            p.constructor__price от 9000 руб за п.м
+            .constructor__preview#constructor
+                .constructor__slider.constructor__slider--show#open-modules
+                    img.constructor__slide(src="images/constructor/open-facade/open-facade.jpg" width="1024" height="768")
+                    img.constructor__slide(src="images/constructor/open-facade/open-facade-furniture.jpg" width="1024" height="768")
+                .constructor__slider#ldsp-facade
+                    img.constructor__slide(src="images/constructor/ldsp/dub_kantenberri.jpg" width="1024" height="768" title="Дуб 'Кантенберри'" alt="Дуб 'Кантенберри'")
+                    img.constructor__slide(src="images/constructor/ldsp/gemchug_pryamaya.jpg" width="1024" height="768" title="Жемчуг" alt="Жемчуг")
+                    img.constructor__slide(src="images/constructor/ldsp/indijskij_ehboni_pryamaya.jpg" width="1024" height="768" title="Индийский эбони" alt="Индийский эбони")
+                    img.constructor__slide(src="images/constructor/ldsp/Jadeite_Green_pryamaya.jpg" width="1024" height="768" title="'Жадейте' зеленая" alt="'Жадейте' зеленая")
+                    img.constructor__slide(src="images/constructor/ldsp/kantru_blu.jpg" width="1024" height="768" title="Кантри блю" alt="Кантри блю")
+                    img.constructor__slide(src="images/constructor/ldsp/laijm_pryamaya.jpg" width="1024" height="768" title="Лайм" alt="Лайм")
+                    img.constructor__slide(src="images/constructor/ldsp/latte_pryamaya.jpg" width="1024" height="768" title="Латте" alt="Латте")
+                    img.constructor__slide(src="images/constructor/ldsp/makassar_pyamaya.jpg" width="1024" height="768" title="Макассар" alt="Макассар")
+                    img.constructor__slide(src="images/constructor/ldsp/solnc_svet_pryamaya.jpg" width="1024" height="768" title="Солнечный свет" alt="Солнечный свет")
+                    img.constructor__slide(src="images/constructor/ldsp/sonoma_pryamaya.jpg" width="1024" height="768" title="Сонома" alt="Сонома")
+                    img.constructor__slide(src="images/constructor/ldsp/tuya_pryamaya.jpg" width="1024" height="768" title="Туя" alt="Туя")
+                .constructor__slider#mdf-facade
+                    img.constructor__slide(src="images/constructor/mdf/baklagan.jpg" width="1024" height="768" title="Баклажан" alt="Баклажан")
+                    img.constructor__slide(src="images/constructor/mdf/belyu.jpg" width="1024" height="768" title="Белый" alt="Белый")
+                    img.constructor__slide(src="images/constructor/mdf/dub_zolotou.jpg" width="1024" height="768" title="Дуб Золотой" alt="Дуб Золотой")
+                    img.constructor__slide(src="images/constructor/mdf/kapychino_glyanec.jpg" width="1024" height="768" title="Капучино глянец" alt="Капучино глянец")
+                    img.constructor__slide(src="images/constructor/mdf/kvartet_biryza.jpg" width="1024" height="768" title="Квартет Бирюза" alt="Квартет Бирюза")
+                    img.constructor__slide(src="images/constructor/mdf/len_beluy.jpg" width="1024" height="768" title="Лён белый" alt="Лён белый")
+                    img.constructor__slide(src="images/constructor/mdf/mahagon.jpg" width="1024" height="768" title="Махагон" alt="Махагон")
+                    img.constructor__slide(src="images/constructor/mdf/mokko_glyanec.jpg" width="1024" height="768" title="Моко глянец" alt="Моко глянец")
+                    img.constructor__slide(src="images/constructor/mdf/morennyu_oreh.jpg" width="1024" height="768" title="Орех" alt="Орех")
+                    img.constructor__slide(src="images/constructor/mdf/oreh_temnuy_metall.jpg" width="1024" height="768" title="Орех тёмный металл" alt="Орех тёмный металл")
+                .constructor__slider#plastic-facade
+                    img.constructor__slide(src="images/constructor/plastic/black_kit.jpg" width="1024" height="768" title="Черный пластик" alt="Черный пластик")
+                    img.constructor__slide(src="images/constructor/plastic/fialka_kit.jpg" width="1024" height="768" title="Фиалка" alt="Фиалка")
+                    img.constructor__slide(src="images/constructor/plastic/fistashca_kit.jpg" width="1024" height="768" title="Фисташковый" alt="Фисташковый")
+                    img.constructor__slide(src="images/constructor/plastic/mramor_kit_2.jpg" width="1024" height="768" title="Мраморный Черный" alt="Мраморный Черный")
+                    img.constructor__slide(src="images/constructor/plastic/mramor_kit_1.jpg" width="1024" height="768" title="Мраморный Белый" alt="Мраморный Белый")
+                    img.constructor__slide(src="images/constructor/plastic/red_kit.jpg" width="1024" height="768" title="Красный" alt="Красный")
+                    img.constructor__slide(src="images/constructor/plastic/graphit.jpg" width="1024" height="768" title="Графит" alt="Графит")
+                    img.constructor__slide(src="images/constructor/plastic/zebrano.jpg" width="1024" height="768" title="Зебрано" alt="Зебрано")
+                    img.constructor__slide(src="images/constructor/plastic/mikerin.jpg" width="1024" height="768" title="Микерин Серый" alt="Микерин Серый")
+                    img.constructor__slide(src="images/constructor/plastic/mikerin_2.jpg" width="1024" height="768" title="Микерин Темно-серый" alt="Микерин Темно-серый")
+                    
+                //- .constructor__trigger  Под вопросом, нужно ли вообще.
+                //-     input.constructor__radio.constructor__radio--day(type="radio" name="trigger" id="day" checked="checked")
+                //-     label.constructor__item.constructor__item--day(for="day") День
+                //-     input.constructor__radio.constructor__radio--lock(type="radio" name="trigger" id="lock")
+                //-     label.constructor__item.constructor__item--lock(for="lock") Закрыть двери
+                //-     input.constructor__radio.constructor__radio--night(type="radio" name="trigger" id="night")
+                //-     label.constructor__item.constructor__item--night(for="night") Ночь
+            .constructor__row.constructor__row--bg-white
+                .constructor__col.col-md-6.col-lg-6.col-xs-12
+                    .constructor__title.constructor__title--line
+                        h2.constructor__head Фасады
+                    .constructor__label.constructor__label--facade#constructor-facade
+                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="facade-ldsp")
+                        label.constructor__facade.constructor__facade--material--ldsp(for="facade-ldsp") Лдсп
+                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="facade-mdf")
+                        label.constructor__facade.constructor__facade--material--mdf(for="facade-mdf") Мдф
+                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="facade-plastic")
+                        label.constructor__facade.constructor__facade--material.constructor__facade--material--plastic(for="facade-plastic") Пластик
+                    p.constructor__text +120 вариантов цветов и структур
+                .constructor__col.col-md-6.col-lg-6.col-xs-12
+                    .constructor__title.constructor__title--line
+                        h2.constructor__head Гамма                    
+                    .constructor__label.constructor__label--color
+                        input.constructor__radio.constructor__radio--color(type="radio" name="color" id="color-1")
+                        label.constructor__color.constructor__color--white(for="color-1") Белый цвет
+                        input.constructor__radio.constructor__radio--color(type="radio" name="color" id="color-2")
+                        label.constructor__color.constructor__color--green(for="color-2")  Зеленый цвет
+                        input.constructor__radio.constructor__radio--color(type="radio" name="color" id="color-3")
+                        label.constructor__color.constructor__color--blue(for="color-3") Голубой цвет
+                        input.constructor__radio.constructor__radio--color(type="radio" name="color" id="color-4") 
+                        label.constructor__color.constructor__color--red(for="color-4") Красный цвет
+                        input.constructor__radio.constructor__radio--color(type="radio" name="color" id="color-5")
+                        label.constructor__color.constructor__color--gray-dark(for="color-5") Темно-серый цвет
+                    p.constructor__text +120 вариантов цветов и структур
 
                 
             

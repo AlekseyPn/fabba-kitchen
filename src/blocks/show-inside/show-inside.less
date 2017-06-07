@@ -1,8 +1,142 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/show-inside/show-inside.less';
-
-@import '../../less/variables.less';     // только для удобства обращения к переменным
-
-
 .show-inside {
-  
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    &__title {       
+        .heading()
+         
+    }
+
+    
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__image {
+        width: 100%;
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }    
+
+    &__link {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        font-size: @font-size + 0.2;
+        font-weight: @font-weight--normal;
+        color: @white;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: @black;
+        transition: all @transition-time ease-out;
+        
+        &:active {
+            background-color: @gray-darken;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        .clearfix();
+    }
+
+    &__slide {
+        float: left;
+        padding: 5px;              
+    }
+
+    .slick-center {            
+        img {
+            transform: scale(1.1);
+        }
+    }
+
+    &__text {        
+        text-align: center;
+    }
+
+    &__arrow{
+        position: absolute;
+        display: none;
+        width: 32px;
+        height: 46px;
+        border: none;
+        outline: none;
+        background-color: transparent;        
+        z-index: 1;
+
+        &--prev {
+            top: 50%;
+            left: 10px;
+            margin-top: -23px;
+            .sprite-icon(-20px, -660px, 33px, 46px);
+            &:hover {
+                background-position: -20px -746px;
+            }
+        }
+
+        &--next {
+            top: 50%;
+            right: 10px;
+            margin-top: -23px;
+            .sprite-icon(-20px, -832px, 32px, 46px);
+            &:hover {
+                background-position: -20px -918px;
+            }
+        }
+    }
+}
+
+@media(min-width: @screen-sm) {
+    .show-inside {
+        padding-bottom: 60px;
+        &__row--style--padding-up {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+}
+
+@media(min-width: @screen-md) {
+    .show-inside{
+        padding: 0;
+        &__row {
+            padding-left: 0;
+            padding-right: 0;
+            &--align--justify {
+                font-size: 0;                               
+            }
+
+        }                
+
+        &__item {
+            display: inline-block;
+            vertical-align: top;            
+            &:nth-child(2n) {
+                margin-left: 4%;
+            }
+        }
+
+        &__arrow {
+            display: block;
+        }
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .show-inside {
+            &__item {
+            margin-right: 2%;
+            &:nth-child(2n) {
+                margin-left: 0;
+            }
+        }
+    }
 }

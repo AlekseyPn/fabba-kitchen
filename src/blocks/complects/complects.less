@@ -1,40 +1,133 @@
-.complects__item {
-    position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    &--accessories::before {
-        .sprite-complects(-5px, -5px, 126px, 119px);
+.complects {
+    
+    background-image: url(../images/bg/complects-bg.jpg);
+    background-repeat: repeat;
+    background-position: 0 0;
+
+    &__title {
+        .heading();
+        h2 {
+            background-image: url(../images/bg/complects-bg.jpg);
+        }
     }
 
-    &--cupboard::before {
-        .sprite-complects(-5px, -134px, 102px, 115px);
+    &__row {
+        justify-content: center;
     }
 
-    &--handle::before {
-        .sprite-complects(-5px, -259px, 151px, 81px);
+    &__item {
+        position: relative;
+        width: 224px;
+        margin-bottom: 20px;
+        padding-top: 155px;        
+        padding-left: 23px;
+        color: @white;
+        background-color: @black;
+        box-sizing: border-box;
+        &--table {
+            background-color: @color-main;
+            color: @black;
+
+            .complects__price {
+                color: @black;
+            }
+
+            .complects__valute {
+                color: @black;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &--accessories::before {
+            top: 19px;
+            left: 50px;
+            .sprite-complects(-5px, -5px, 126px, 119px);
+        }
+    
+        &--cupboard::before {
+            top: 22px;
+            left: 63px;
+            .sprite-complects(-5px, -134px, 102px, 115px);
+        }
+    
+        &--handle::before {
+            top: 41px;
+            left: 36px;
+            .sprite-complects(-5px, -259px, 151px, 81px);
+        }
+    
+        &--hob::before {
+            top: 28px;
+            left: 36px;
+            .sprite-complects(-5px, -350px, 149px, 102px);
+        }
+    
+        &--hood::before {
+            top: 30px;
+            left: 33px;
+            .sprite-complects(-5px, -462px, 156px, 90px);
+        }
+    
+        &--oven::before {
+            top: 21px;
+            left: 59px;
+            .sprite-complects(-5px, -562px, 103px, 116px);
+        }
+    
+        &--sink::before {
+            top: 35px;
+            left: 32px;
+            .sprite-complects(-5px, -688px, 153px, 90px);
+        }
+    
+        &--table::before {
+            top: 30px;
+            left: 50px;
+            .sprite-complects(-5px, -788px, 114px, 117px);
+        }
     }
 
-    &--hob::before {
-        .sprite-complects(-5px, -350px, 149px, 102px);
+    &__descr {
+        margin: 0;        
+        font-size: @font-size + 0.2;
+        font-weight: @font-weight--normal;
+        line-height: 1.1;
+    }
+    
+    &__price {
+        position: relative;
+        top: -20px;
+        left: 25px;
+        font-size: @font-size--headings;
+        color: @color-main;
+        text-transform: uppercase;        
     }
 
-    &--hood::before {
-        .sprite-complects(-5px, -462px, 156px, 90px);
+    &__valute {
+        font-size: @font-size + 0.2;
+        color: @white;
     }
+}
 
-    &--oven::before {
-        .sprite-complects(-5px, -562px, 103px, 116px);
+@media(min-width: @screen-sm) {
+    .complects {
+        &__row {
+            justify-content: space-around;
+        }
     }
+}
 
-    &--sink::before {
-        .sprite-complects(-5px, -688px, 153px, 90px);
-    }
+@media(min-width: @screen-md) {
+    .complects {
+        padding-top: 80px;
+        padding-bottom: 100px;
 
-    &--table::before {
-        .sprite-complects(-5px, -788px, 114px, 117px);
+        &__title {
+            margin-bottom: 30px;
+        }
     }
 }

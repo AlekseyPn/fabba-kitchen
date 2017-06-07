@@ -1,8 +1,48 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/contacts/contacts.less';
-
-@import '../../less/variables.less';     // только для удобства обращения к переменным
-
-
 .contacts {
-  
+    font-size: 0px;
+    background-color: @gray-dark;
+
+    &__item {      
+        display: inline-block;  
+        width: 100%;
+        padding-top: 180px;
+        padding-bottom: 30px;
+        font-size: @font-size + 0.2;
+        color: @white;
+        text-align: center;
+        border-bottom: 6px solid;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        &--contacts {
+            background-image: url(../images/contacts-footer.png)
+        }
+        &--guarantee {
+            background-image: url(../images/guarantee-footer.png)
+        }
+        &--deliver {
+            background-image: url(../images/pay-and-shipping.png)
+        }
+        &--build {
+            background-image: url(../images/build.png)
+        }
+    }
+}
+
+@media(min-width: @screen-sl) {
+    .contacts{
+
+        &__item {
+            width: 50%;
+        }
+    }
+}
+
+@media(min-width: @screen-md) {
+    .contacts{
+        
+        &__item {
+            width: 25%;
+        }
+    }
 }

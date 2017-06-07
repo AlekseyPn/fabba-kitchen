@@ -1,8 +1,196 @@
-// Для импорта в диспетчер подключений: @import './src/blocks/advantages/advantages.less';
+.advantages {   
+    text-align: center;
 
-@import '../../less/variables.less';     // только для удобства обращения к переменным
+    .container {
+        padding-top: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #efecea;
+    }
+
+    &__title {           
+        font-size: @font-size--headings;
+        text-transform: uppercase;     
+        overflow: hidden;
+        &::before,
+        &::after {
+            position: relative;
+            top: -5px;
+            content: "";
+            display: none;            
+            vertical-align: middle;
+            width: 100%;
+            height: 1px;           
+            background-color: @black;
+            background-clip: content-box;
+            box-sizing: border-box;
+        }       
+        &::before {            
+            padding-right: 20px;
+            margin-left: -100%;
+        }
+
+        &::after {
+            padding-left: 20px;
+            margin-right: -100%;
+        }
+    }
+    
+    &__item {
+        padding-top: 165px;
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+        background-position: center 5px;         
+
+        &--first {
+            background-image: url(../images/advantages-1.png);                  
+        }
+
+        &--second {
+            background-image: url(../images/advantages-2.png);
+        }
+
+        &--third {
+            background-image: url(../images/advantages-3.png);
+        }
+    }
+
+    &__wrapper {
+        background-size: cover;
+        &--left {            
+            background-image: url(../images/proposition-1.jpg);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+        &--right {
+            background-image: url(../images/proposition-2.jpg);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    }
+
+    &__event {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 25px;
+        color: @white;
+        background-color: fade(@black, 50%)
+    }
+
+    &__head {
+        margin: 0;        
+        font-size: @font-size + 1;
+        font-weight: @font-weight--bold;
+        line-height: 1;        
+    }
+
+    &__descr {
+        &--font-size {
+            font-size: @font-size + 0.2;            
+        }
+    }
+}
+
+@media(min-width: @screen-sm) {
+    .advantages {
+        .container {
+            background-color: transparent;
+        }
+        .row--bg {
+            background-image: url(../images/advantages-bg.png);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+
+        &__row {
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        &__item {
+            width: 50%;
+        }
+    }
+}
 
 
-.advantages {
-  
+@media(min-width: @screen-sl) {
+    .advantages {
+        &__title {
+            &::before,
+            &::after {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media(min-width:@screen-md) {
+    .advantages{
+        .row {
+            width: 100%;
+        }
+
+        &__wrapper {
+            &--half-width {
+                display: inline-block;
+                vertical-align: top;
+                width: 48%;
+                min-height: 400px;
+                padding-top: 82px;
+                padding-bottom: 60px;
+                padding-left: 40px;
+                padding-right: 20px;                
+                box-sizing: border-box;
+            }
+
+            &--right {
+                padding-right: 40px;
+                padding-left: 20px;                
+            }
+        }
+
+        &__head {
+            font-size: @font-size--headings;
+        }
+
+        &__event {            
+            max-width: 420px;
+            min-height: 257px;
+            max-height: 257px;
+            box-sizing: border-box;
+            &--right {
+                float: right;
+            }
+        }
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .advantages {
+        &__wrapper {
+            &--left {
+                padding-right: 60px;
+                text-align: right;
+            }
+
+            &--right {
+                padding-left: 60px;
+                text-align: left;
+            }
+        }
+
+        &__event {
+            text-align: left;
+        }
+    }
+}
+
+@media(min-width: @screen-xl) {
+    .advantages {
+        &__head {
+            font-size: @font-size--big;
+        }
+    }
 }

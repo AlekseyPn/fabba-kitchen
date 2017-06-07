@@ -1,47 +1,26 @@
-(function(){
-    $('.review__wrapper').slick({
-  centerMode: true,
-  autoplay: true,
-  centerPadding: '100px',
-  slidesToShow: 1,
-  autoplaySpeed: 4000,
-  prevArrow: '<button type="button" class="review__arrow  review__arrow--prev"></button>',
-  nextArrow: '<button type="button" class="review__arrow  review__arrow--next"></button>',
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        autoplay: true,
-        autoplaySpeed: 4000,
-        arrows: false,
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 1
-      }
+var reviewSlider = document.getElementById('bee-3d');
+var reviewItem = document.querySelectorAll('.review__item');
+var focusItem = Math.floor((reviewItem.length / 2));
+
+
+
+var slider3D = new Bee3D (reviewSlider, {    
+    selector: '.review__item',    
+    effect: 'arc',    
+    focus: focusItem,
+    listeners: {
+        keys: true,
+        touches: true,
+        clicks: true,
+        drag: true
     },
-    {
-      breakpoint: 480,
-      settings: {
-        autoplay: true,
-        autoplaySpeed: 4000,
-        arrows: false,
-        centerMode: true,
-        centerPadding: '20px',
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 370,
-      settings: {
-        autoplay: true,
-        autoplaySpeed: 4000,
-        arrows: false,
-        centerMode: true,
-        centerPadding: '10',
-        slidesToShow: 1
-      }
-    }
-  ]
-});
-}());
+    navigation: {
+        enabled: true,
+        next: '.review__arrow.review__arrow--next',
+        prev: '.review__arrow.review__arrow--prev'
+    }        
+})
+
+
+
 
