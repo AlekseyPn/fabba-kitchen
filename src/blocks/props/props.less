@@ -1,0 +1,52 @@
+.props {
+    margin-bottom: 30px;
+    
+    &__item {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__name {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: @font-size--headings - 0.5;
+
+        svg {
+            height: 36px;
+        }
+    }
+    
+}
+
+@media(min-width: @screen-md) {
+    .props {
+        font-size: 0;
+        &__item {
+            width: 33.3%;
+            padding-right: 10px;
+            box-sizing: border-box;            
+        }
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .props {
+        &__item {
+            text-align: left;
+        }
+        
+        &__name {
+            margin-bottom: 5px;
+            svg {
+                height: 20px;
+            }
+        }
+
+        &__descr {
+            margin-top: 5px;
+            font-size: @font-size - 0.2;
+        }
+    }
+}

@@ -43,18 +43,25 @@
 
     &__slider {
         position: relative;
+        opacity: 0;
+        height: 0;
         overflow: hidden;
         .clearfix();
+        &--show {
+            opacity: 1;
+            height: auto;
+        }
     }
 
     &__slide {
         float: left;
-        padding: 5px;              
+        padding: 5px;
+        outline: none;              
     }
 
     .slick-center {            
         img {
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
     }
 
@@ -92,6 +99,85 @@
             }
         }
     }
+   
+    &__label {
+        font-size: 0;
+        &--align--center {
+            text-align: center;
+        }
+    }
+
+    &__facade {
+       display: inline-block;
+       vertical-align: top;
+       width: 112px;
+       margin-right: 3%;
+       font-size: @font-size;
+       font-weight: @font-weight--normal;
+       font-style: @font-style;
+       text-transform: uppercase;
+       cursor: pointer;
+       &:focus {
+           outline: none;
+       } 
+       &:hover {
+           &::after {
+               box-shadow: 0 0 13px @gray-darken;
+           }
+       }      
+       
+        &::after {
+           content: "";
+           display: block;
+           width: 100%;
+           height: 57px;
+           padding: 11px 12px;
+           margin-top: 5px;
+           margin-bottom: 15px;
+           border: 1px solid @gray-light;
+           background-position: 11px 10px;
+           background-repeat: no-repeat;               
+           box-sizing: border-box;
+        }
+        
+        &--material--ldsp::after {
+            background-image: url(../images/constructor/facade-ldsp.png)                
+        }
+        &--material--mdf::after {
+            background-image: url(../images/constructor/facade-mdf.png) 
+        }
+        &--material--plastic::after {
+            background-image: url(../images/constructor/facade-plastic.png) 
+        }        
+               
+    }
+
+    &__row--label {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__radio {
+        display: none;
+    }
+
+    &__radio--material:checked + &__facade::after {
+           border-color: @color-main;
+           box-shadow: 0 0 13px fade(@color-main, 75%);
+    }
+
+    &__tab-item {
+        display: none;
+        &--show {
+            display: block;
+        }
+    }
+    
+    &__tab-title {
+        margin-bottom: 10px;
+        font-size: @font-size--headings;
+        text-align: center;
+    }        
 }
 
 @media(min-width: @screen-sm) {
@@ -132,11 +218,56 @@
 
 @media(min-width: @screen-lg) {
     .show-inside {
-            &__item {
+        &__item {
             margin-right: 2%;
             &:nth-child(2n) {
                 margin-left: 0;
             }
         }
+        
+
+        &__tab-item {
+            padding-top: 70px;
+            padding-bottom: 70px;
+            text-align: right;
+            &--body {
+                background-image: url(../images/bg/show-inside-ldsp.png);
+                background-repeat: no-repeat;
+                background-position: -30px 0;                
+            }
+
+            &--table {
+                background-image: url(../images/bg/show-inside-table.png);
+                background-repeat: no-repeat;
+                background-position: -30px 0;                
+            }
+
+            &--facade {
+                background-image: url(../images/bg/show-inside-body.png);
+                background-repeat: no-repeat;
+                background-position: -30px 0;                
+            }
+
+            &--furniture {
+                background-image: url(../images/bg/show-inside-furniture.png);
+                background-repeat: no-repeat;
+                background-position: -30px 0;                
+            }
+        }
+
+        &__wrapper {
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+
+            .show-inside__text {
+                text-align: left;
+            }            
+        }
+
+        &__tab-title {
+            text-align: left;
+        }
     }
+    
 }

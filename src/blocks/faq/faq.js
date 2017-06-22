@@ -23,4 +23,4 @@ $('.faq__item').click(function (e) {
         // })
     }
 
-})
+});

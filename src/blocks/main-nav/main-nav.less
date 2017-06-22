@@ -12,8 +12,7 @@
         padding: 20px 15px;    
         flex-direction: column;
         align-items: center;
-        list-style: none;
-        background-color: @black;
+        list-style: none;        
         transform: translateX(0);
         transition: all @transition-time ease-out;    
     }
@@ -34,7 +33,9 @@
 @media(min-width: @screen-md) {
     .main-nav {
         position: relative;
-        background-color: @black;
+        margin-bottom: -60px;
+        background-color: fade(@black, 70%);
+        z-index: 20;
         &--close .main-nav__list {
             transform: translateX(0);
         }
@@ -42,7 +43,13 @@
         &__list {
             flex-direction: row;
             justify-content: space-around;
-            padding: 11px 0;                         
+            padding: 11px 0; 
+        }
+    }
+
+    .page-header--form {
+        .main-nav {
+            margin-bottom: 0;
         }
     }
 }

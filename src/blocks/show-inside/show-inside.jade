@@ -3,46 +3,160 @@ section.show-inside
         .show-inside__title.show-inside__title--line
             h2 Что внутри
         .show-inside__row.show-inside__row--style--padding-up.show-inside__row--align--justify
-            .show-inside__item.col-xs-12.col-md-6.col-lg-3
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3#toggle-facade(data-toggle="facade")
                 .show-inside__image
-                    img(src="images/facade-example.jpg" width="245" height="230" title="Фасады")
-                a.show-inside__link Фасады
-            .show-inside__item.col-xs-12.col-md-6.col-lg-3
-                .show-inside__image 
-                    img(src="images/table-example.jpg" width="245" height="230" title="Столешницы")
-                a.show-inside__link Столешницы
-            .show-inside__item.col-xs-12.col-md-6.col-lg-3
+                    a.scroll(href="#tab-facade")
+                        img(src="images/facade-example.jpg" width="245" height="230" title="Фасады")
+                a.show-inside__link.scroll(href="#tab-facade") Фасады
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3#toggle-table(data-toggle="table")
                 .show-inside__image
-                    img(src="images/body-example.jpg" width="245" height="230" title="Корпуса")
-                a.show-inside__link Корпуса
-            .show-inside__item.col-xs-12.col-md-6.col-lg-3
+                    a.scroll(href="#tab-table")
+                        img(src="images/table-example.jpg" width="245" height="230" title="Столешницы")
+                a.show-inside__link.scroll(href="#tab-table") Столешницы
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3#toggle-body(data-toggle="body")
                 .show-inside__image
-                    img(src="images/furniture-example.jpg" width="245" height="230" title="Фурнитура")
-                a.show-inside__link Фурнитура
+                    a.scroll(href="#tab-body")
+                        img(src="images/body-example.jpg" width="245" height="230" title="Корпуса")
+                a.show-inside__link.scroll(href="#tab-body") Корпуса
+            .show-inside__item.col-xs-12.col-md-6.col-lg-3#toggle-furniture(data-toggle="furniture")
+                .show-inside__image
+                    a.scroll(href="#tab-furniture")
+                        img(src="images/furniture-example.jpg" width="245" height="230" title="Фурнитура")
+                a.show-inside__link.scroll(href="#tab-furniture") Фурнитура
         .show-inside__row
-            .constructor.constructor--bg--none
-                .constructor__label.constructor__label--facade.constructor__label--align--center#show-inside
-                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="show-ldsp" checked="checked")
-                        label.constructor__facade.constructor__facade--material--ldsp(for="show-ldsp") Лдсп
-                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="show-mdf")
-                        label.constructor__facade.constructor__facade--material--mdf(for="show-mdf") Мдф
-                        input.constructor__radio.constructor__radio--material(type="radio" name="facade" id="show-plastic")
-                        label.constructor__facade.constructor__facade--material.constructor__facade--material--plastic(for="show-plastic") Пластик
+            .show-inside__tab
+                .show-inside__tab-item.show-inside__tab-item--body.show-inside__tab-item--show#tab-body
+                    .show-inside__wrapper
+                        h3.show-inside__tab-title Корпуса из Лдсп
+                        p.show-inside__text Корпуса — это основа будущего кухонного гарнитура. Мы делаем корпуса из ЛДСП, толщиной 16 мм. Благодаря вакуумной прессовке и особому рецепту связующих, утяжелённые влагостойкие ЛДСП выдерживают значительные нагрузки, соответствуют строгим экологическим стандартам и, в целом, сравнимы по эксплуатационным характеристикам с плитами МДФ.
+                        .show-inside__props.props
+                            .props__item
+                                p.props__name 15 лет
+                                p.props__descr Средний срок службы корпусов из ЛДСП
+                            .props__item
+                                p.props__name 4 цвета
+                                p.props__descr Большой выбор цветовых текстур
+                            .props__item
+                                p.props__name   
+                                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94.932 25.676")
+                                        path(fill="#221F20" d="M81.732 12.596c-1.16 1.158-1.74 2.588-1.74 4.29 0 1.69.58 3.11 1.74 4.256 1.16 1.146 2.53 1.72 4.113 1.72 1.57 0 2.938-.573 4.104-1.72 1.165-1.146 1.748-2.565 1.748-4.255 0-1.702-.583-3.133-1.75-4.29-1.165-1.16-2.533-1.738-4.103-1.738-1.582 0-2.953.578-4.113 1.736m4.113-4.516c2.566 0 4.722.868 6.467 2.605 1.746 1.737 2.62 3.805 2.62 6.202 0 2.373-.874 4.432-2.62 6.175-1.746 1.743-3.902 2.614-6.467 2.614-2.542 0-4.696-.87-6.46-2.614-1.762-1.743-2.644-3.802-2.644-6.175 0-2.397.882-4.465 2.646-6.202s3.917-2.605 6.46-2.605M43.58 12.596c1.16-1.158 2.53-1.737 4.112-1.737 1.57 0 2.938.578 4.104 1.736.59.585 1.028 1.24 1.32 1.964h-10.85c.29-.723.727-1.38 1.313-1.964zm8.98 7.625c-.22.325-.47.633-.765.922-1.166 1.146-2.534 1.72-4.104 1.72-1.58 0-2.952-.573-4.112-1.72-.95-.94-1.505-2.064-1.676-3.368h14.832c.028-.29.042-.587.042-.888 0-2.397-.873-4.465-2.62-6.202-1.745-1.737-3.9-2.605-6.466-2.605-2.54 0-4.695.867-6.458 2.604s-2.645 3.805-2.645 6.202c0 2.373.88 4.432 2.645 6.175 1.763 1.744 3.917 2.615 6.46 2.615 2.565 0 4.72-.87 6.466-2.614.46-.457.854-.938 1.192-1.44l-2.79-1.4zM72.597 20.34c-.2.28-.425.55-.683.802-1.166 1.146-2.534 1.72-4.104 1.72-1.58 0-2.952-.573-4.113-1.72-1.16-1.147-1.74-2.565-1.74-4.256 0-1.702.58-3.132 1.74-4.29 1.16-1.158 2.53-1.737 4.113-1.737 1.57 0 2.938.578 4.104 1.736.26.258.485.53.688.815l2.49-1.797c-.248-.318-.513-.63-.813-.93-1.747-1.736-3.903-2.605-6.47-2.605-2.54 0-4.694.87-6.458 2.606-1.763 1.737-2.645 3.804-2.645 6.2 0 2.375.882 4.433 2.645 6.176 1.763 1.743 3.916 2.614 6.46 2.614 2.565 0 4.72-.872 6.467-2.614.297-.298.56-.608.807-.924l-2.49-1.796z")
+                                        path(fill="#38B449" d="M15.22 0L0 11.188v14.488h11.46V16.77h7.52v8.906h11.462V11.188L15.222 0zM49.398 1.687c-1.246 1.23-1.806 2.88-1.692 4.49 1.63.114 3.298-.44 4.544-1.672 1.245-1.23 1.806-2.88 1.692-4.49-1.63-.113-3.298.44-4.544 1.672")
+                                p.props__descr Экологичеcки чистый материал
+                .show-inside__tab-item.show-inside__tab-item--facade#tab-facade
+                    .show-inside__wrapper
+                        h3.show-inside__tab-title Фасады из МДФ с ПВХ-плёнкой
+                        p.show-inside__text Мы предлагаем надёжные и влагостойкие плиты МДФ с покрытием ПВХ-плёнкой. МДФ фасады практичнее и удобнее, чем фасады из ДСП. Фасады МДФ не нуждаются в дополнительных защитных мерах, возможна имитация текстуры ценных пород дерева или камня. Плёнка, покрывающая плиту МДФ, устойчива к царапинам и легко моется.
+                        .show-inside__props.props
+                            .props__item
+                                p.props__name 10 лет
+                                p.props__descr Минимальный срок cлужбы ПВХ-пленки
+                            .props__item
+                                p.props__name 500+
+                                p.props__descr Большой выбор цветовых текстур
+                            .props__item
+                                p.props__name   
+                                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.02657 36")
+                                        path(fill="none" stroke="#0085CC" stroke-width="2" d="M1.027 31.02l1.865-12.967-1.51-6.19L5.555 7h6.943l4.173 4.863-1.508 6.19 1.865 12.968-1.51 3.98H2.537l-1.51-3.98zM23.027 33.2V19.7L25.82 17h4.414l2.793 2.7v13.5l-.874 1.8H23.9l-.873-1.8zM7.526 1h3.002c.275 0 .5.223.5.5v2c0 .277-.225.5-.5.5H7.526c-.276 0-.5-.223-.5-.5v-2c0-.277.224-.5.5-.5zM28.027 10c.552 0 1 .448 1 1v3h-2v-3c0-.552.447-1 1-1zM6.027 17h6M5.027 30h8M43.804 26H56.25c.98 0 1.777.796 1.777 1.778v1.778c0 .98-.796 1.777-1.778 1.777H43.803c-.98 0-1.777-.796-1.777-1.777v-1.778c0-.982.796-1.778 1.777-1.778zM29.665 12h4")
+                                        path(fill="none" stroke="#0085CC" stroke-width="2" stroke-dasharray="2" d="M41.027 35h18")
+                                
+                                p.props__descr ПВХ-пленку можно мыть
+                .show-inside__tab-item.show-inside__tab-item--table#tab-table
+                    .show-inside__wrapper
+                        h3.show-inside__tab-title Столешницы из ЛДСП
+                        p.show-inside__text Столешница — главная рабочая зона на кухне. Её поверхность должна выдерживать воздействие жиров, влаги и перепадов температур. Мы делаем столешницы из ЛДСП толщиной до 60 мм. Стыки и швы обрабатываются герметиком, а поверхность покрывается акриловыми смолами для защиты от истирания.
+                        .show-inside__props.props
+                            .props__item
+                                p.props__name 20 лет
+                                p.props__descr Средний срок службы столещниц из ЛДСП
+                            .props__item
+                                p.props__name 50+
+                                p.props__descr Большой выбора цветовых текстур
+                            .props__item
+                                p.props__name   
+                                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 35.9")
+                                        path(fill="none" stroke="#6EBE17" stroke-width="2" d="M9 14.9c2.2 0 4-1.8 4-4.1S9 1.9 9 1.9s-4 6.7-4 8.9 1.8 4.1 4 4.1zm14 6c2.2 0 4-1.8 4-4.1s-4-8.9-4-8.9-4 6.7-4 8.9 1.8 4.1 4 4.1zm14-6c2.2 0 4-1.8 4-4.1s-4-8.9-4-8.9-4 6.7-4 8.9 1.8 4.1 4 4.1zm14 6c2.2 0 4-1.8 4-4.1s-4-8.9-4-8.9-4 6.7-4 8.9 1.8 4.1 4 4.1zm14-6c2.2 0 4-1.8 4-4.1s-4-8.9-4-8.9-4 6.7-4 8.9 1.8 4.1 4 4.1zm-65 20h74")
+                                        path(stroke="#6EBE17" stroke-width="2" stroke-dasharray="2,2" d="M2 30.9h70")
+                                        path(stroke="#6EBE17" stroke-width="2" d="M0 26.9h74")
+                                p.props__descr Экологичеки чистый материал
+                .show-inside__tab-item.show-inside__tab-item--furniture#tab-furniture
+                    .show-inside__wrapper
+                        h3.show-inside__tab-title Качественная фурнитура
+                        p.show-inside__text Фурнитура — это ручки, петли, ножки, выдвижные механизмы и прочее оборудование, облегчающее хозяйке жизнь. Цена кухонной фурнитуры может достигать 25% от стоимости всего гарнитура. Мы используем надёжные комплектующие. Необходимые наименования подбираются по вашему желанию.
+                        .show-inside__props.props
+                            .props__item
+                                p.props__name 10 лет
+                                p.props__descr Средний срок службы корпусов из ЛДСП
+                            .props__item
+                                p.props__name 100 000 
+                                p.props__descr Циклов открывания закрывания
+                            .props__item
+                                p.props__name   
+                                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.9834 36")
+                                        path(fill="#F8B61C" d="M46.5 31.75l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L46.5 25l1.323 2.68 2.957.43-2.14 2.085.505 2.946M58.5 31.75l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L58.5 25l1.323 2.68 2.957.43-2.14 2.085.505 2.946M70.5 31.75l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L70.5 25l1.323 2.68 2.957.43-2.14 2.085.505 2.946M82.5 31.75l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L82.5 25l1.323 2.68 2.957.43-2.14 2.085.505 2.946M94.5 31.75l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L94.5 25l1.323 2.68 2.957.43-2.14 2.085.505 2.946")
+                                        path(fill="#2C303D" d="M43.07 17.3c-.015-.667-.023-1.333-.023-2s.008-1.333.023-2c.026-1.047.445-1.935 1.257-2.664.812-.73 1.826-1.094 3.044-1.094 1.224 0 2.24.363 3.05 1.09.81.726 1.226 1.616 1.252 2.668.015.667.023 1.333.023 2s-.008 1.333-.023 2c-.005.26-.046.532-.12.816s-.153.5-.23.653l-.11.225 1.04 1.344-1.25.897-.863-1.04c-.027.022-.067.052-.122.09s-.172.11-.352.208-.37.187-.567.262c-.2.075-.455.144-.77.207s-.636.094-.96.094c-1.232 0-2.25-.364-3.055-1.09-.804-.727-1.22-1.616-1.245-2.668zm1.867.015c0 .152.026.313.08.485.73-.536 1.53-.805 2.4-.805.8 0 1.574.24 2.325.72.02-.09.042-.223.063-.4.015-.67.023-1.343.023-2.015s-.008-1.344-.023-2.016c-.016-.536-.253-1.007-.712-1.41-.46-.403-1.033-.605-1.722-.605s-1.262.2-1.72.604-.697.874-.712 1.41c-.016.672-.024 1.344-.024 2.016s.008 1.344.023 2.015zm2.45 1.11c-.533 0-1.017.175-1.456.523.403.255.883.383 1.44.383.58 0 1.078-.142 1.496-.43-.454-.316-.947-.475-1.48-.475zM53.42 18.354V12.9h1.757v5.348c0 .322.08.598.242.826.16.23.406.343.734.343.23 0 .5-.06.812-.18.313-.12.568-.236.766-.35l.297-.18v-5.806h1.757v8H58.17l-.08-.52c-.077.053-.184.116-.32.19-.135.073-.378.173-.73.298-.35.126-.667.19-.95.19-.582 0-1.08-.125-1.49-.375-.412-.25-.712-.575-.9-.973s-.28-.85-.28-1.356zM61.27 18.433c0-.367.05-.708.15-1.027.103-.32.254-.602.455-.85.2-.248.464-.444.792-.587s.7-.217 1.118-.217h1.968v-.222c0-.32-.106-.59-.32-.812-.212-.22-.53-.332-.957-.332-.412 0-.835.026-1.27.078-.435.052-.768.104-.997.156l-.344.086-.173-1.594c.98-.245 1.938-.367 2.876-.367.93 0 1.653.257 2.168.77s.773 1.157.773 1.933V20.9h-1.6l-.077-.583c-.027.02-.066.047-.118.08-.05.03-.154.09-.307.176s-.307.163-.46.23-.337.124-.55.176c-.213.05-.416.078-.607.078-.788 0-1.405-.24-1.852-.72s-.67-1.116-.67-1.905zm1.757-.016c0 .667.27 1 .81 1 .24 0 .518-.072.837-.217s.58-.29.784-.434l.295-.21v-1.162h-1.9c-.55 0-.826.34-.826 1.023zM69.22 20.9V9.7h1.758V20.9H69.22zM72.788 11.526V9.698h1.82v1.828h-1.82zm.03 9.375v-8h1.76v8h-1.76zM75.613 14.542v-1.64h1.14v-1.93h1.76v1.93h2.1v1.64h-2.1v4.07c0 .293.044.5.135.62.09.124.24.185.45.185.192 0 .406-.01.64-.03s.42-.042.555-.064l.203-.04.094 1.6c-.542.117-1.107.175-1.695.175-.707 0-1.24-.205-1.6-.615s-.54-.944-.54-1.607v-4.294h-1.142zM80.9 12.9h1.82l1.97 5.845h.078l2.117-5.844h1.773l-4.18 10.884h-1.773l1.28-3.203-.444-.155L80.9 12.9zM92.536 18.39c-.016-.49-.023-.98-.023-1.477 0-.495.008-.993.023-1.494.026-.767.31-1.404.852-1.912.542-.51 1.28-.763 2.218-.763.365 0 .746.02 1.14.055s.7.073.907.11l.32.054-.156 1.648c-.812-.15-1.554-.226-2.226-.226-.37 0-.675.112-.917.337-.242.223-.368.487-.38.79-.015.47-.023.936-.023 1.4 0 .465.008.926.024 1.385.01.303.136.568.375.8.238.227.546.342.92.342.36 0 .73-.026 1.114-.078s.673-.104.87-.156l.306-.07.226 1.61c-.812.223-1.65.335-2.515.335-.937 0-1.674-.254-2.21-.764s-.817-1.15-.844-1.926zM99.143 18.37c-.016-.484-.024-.972-.024-1.46s.007-.982.023-1.477c.026-.766.32-1.406.878-1.918.562-.513 1.336-.77 2.326-.77.98 0 1.748.257 2.304.77.558.512.85 1.152.875 1.918.016.495.024.987.024 1.476s-.01.976-.025 1.46c-.025.78-.316 1.425-.87 1.93s-1.325.758-2.31.758c-.99 0-1.763-.253-2.323-.758s-.853-1.15-.88-1.93zm1.757-.094c.01.33.144.6.4.817.255.216.603.324 1.046.324.432 0 .775-.11 1.027-.332.253-.222.385-.49.395-.81.015-.457.023-.916.023-1.374s-.007-.916-.022-1.374c-.01-.328-.142-.6-.395-.816-.252-.216-.6-.324-1.043-.324-.432 0-.775.108-1.03.324-.256.216-.39.488-.4.816-.015.464-.023.925-.023 1.383s.008.913.023 1.366zM107.203 20.9v-8h1.61l.08.523c.077-.053.183-.116.32-.19.135-.073.38-.172.732-.298s.67-.19.95-.19c.585 0 1.084.125 1.496.375.412.25.712.574.9.973s.28.85.28 1.355V20.9h-1.757v-5.345c0-.323-.08-.598-.243-.826s-.408-.344-.736-.344c-.23 0-.5.055-.81.168-.312.11-.567.22-.764.33l-.3.172V20.9h-1.757zM114.49 14.542v-1.64h1.14v-1.93h1.76v1.93h2.1v1.64h-2.1v4.07c0 .293.044.5.135.62.09.124.24.185.45.185.192 0 .406-.01.64-.03s.42-.042.555-.064l.203-.04.094 1.6c-.542.117-1.108.175-1.696.175-.705 0-1.24-.205-1.598-.615-.36-.41-.54-.944-.54-1.607v-4.294h-1.142zM120.652 20.9v-8h1.618l.058.767c.026-.026.067-.06.12-.098s.168-.113.337-.22c.17-.106.346-.2.526-.28s.403-.153.67-.215.528-.1.79-.11v1.64c-.278 0-.548.037-.813.11-.264.073-.485.16-.666.266-.18.105-.34.21-.477.313-.138.105-.24.193-.3.266l-.103.108V20.9h-1.758zM125.165 18.37c-.016-.484-.023-.972-.023-1.46s.007-.982.023-1.477c.026-.766.32-1.406.88-1.918s1.334-.77 2.323-.77c.98 0 1.747.257 2.305.77s.848 1.152.875 1.918c.015.495.023.987.023 1.476s-.007.976-.022 1.46c-.027.78-.317 1.425-.87 1.93s-1.325.758-2.31.758c-.99 0-1.764-.253-2.324-.758s-.853-1.15-.88-1.93zm1.758-.094c.01.33.143.6.398.817s.606.324 1.048.324c.433 0 .775-.11 1.028-.332s.383-.49.394-.81c.016-.457.023-.916.023-1.374s-.007-.916-.023-1.374c-.01-.328-.142-.6-.394-.816s-.6-.324-1.043-.324c-.433 0-.777.108-1.032.324s-.386.488-.397.816c-.016.464-.024.925-.024 1.383s.007.913.023 1.366zM133.226 20.9V9.7h1.757V20.9h-1.757z")
+                                        circle(fill="#7ED321" cx="18" cy="18" r="18")
+                                        circle(fill="none" stroke="#FFF" stroke-width="2" cx="18" cy="18" r="15")
+                                        path(fill="none" stroke="#FFF" stroke-width="3" d="M9 16l7.223 7.277L27.5 12")
+                                p.props__descr Экологичеки чистый материал
+                                 
+
+
+        .show-inside__row.show-inside__row--label
+                .show-inside__label.show-inside__label--align--center
+                        input.show-inside__radio.show-inside__radio--material(type="radio" name="facade" id="show-ldsp" checked="checked")
+                        label.show-inside__facade.show-inside__facade--material--ldsp(for="show-ldsp") Лдсп
+                        input.show-inside__radio.show-inside__radio--material(type="radio" name="facade" id="show-mdf")
+                        label.show-inside__facade.show-inside__facade--material--mdf(for="show-mdf") Мдф
+                        input.show-inside__radio.show-inside__radio--material(type="radio" name="facade" id="show-plastic")
+                        label.show-inside__facade.show-inside__facade--material.show-inside__facade--material--plastic(for="show-plastic") Пластик
         .show-inside__row
-            .show-inside__slider
+            .show-inside__slider.show-inside__slider--show#show-facade-ldsp
                 .show-inside__slide
-                    img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
+                    img(src='images/sliders/carousel/ldsp/facade-1.jpg' width="146" height="259" title="Фасад")
                 .show-inside__slide
-                    img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
+                    img(src='images/sliders/carousel/ldsp/facade-2.jpg' width="146" height="259" title="Фасад")
                 .show-inside__slide
-                    img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
+                    img(src='images/sliders/carousel/ldsp/facade-3.jpg' width="146" height="259" title="Фасад")
                 .show-inside__slide
-                    img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
+                    img(src='images/sliders/carousel/ldsp/facade-4.jpg' width="146" height="259" title="Фасад")
                 .show-inside__slide
-                    img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
+                    img(src='images/sliders/carousel/ldsp/facade-5.jpg' width="146" height="259" title="Фасад")
                 .show-inside__slide
-                    img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
+                    img(src='images/sliders/carousel/ldsp/facade-1.jpg' width="146" height="259" title="Фасад")
                 .show-inside__slide
-                    img(src='images/sliders/carousel/facade-1.jpg' width="167" height="259" title="Фасад")
+                    img(src='images/sliders/carousel/ldsp/facade-2.jpg' width="146" height="259" title="Фасад")
+            .show-inside__slider#show-facade-mdf
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-1.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-2.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-3.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-4.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-5.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-6.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-7.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/mdf/facade-8.jpg' width="146" height="259" title="Фасад")
+            .show-inside__slider#show-facade-plastic
+                .show-inside__slide
+                    img(src='images/sliders/carousel/plastic/facade-1.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/plastic/facade-1.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/plastic/facade-1.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/plastic/facade-1.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/plastic/facade-1.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/plastic/facade-1.jpg' width="146" height="259" title="Фасад")
+                .show-inside__slide
+                    img(src='images/sliders/carousel/plastic/facade-1.jpg' width="146" height="259" title="Фасад")
+            
         p.show-inside__text Для тех, кто хочет купить кухни в стиле классика на заказ, мы предлагаем широкий ассортимент мебели с фасадами в шпоне разных пород дерева и оттенков. В производстве используется автоматизированная декоративная резка, а также элементы ручной работы. Как правило, это изготовление декоративных элементов и витражей, патинирование фасадов.
     

@@ -1,0 +1,202 @@
+section.count-price
+    .container
+        h1.count-price__title Расчет стоимости кухни на заказ.
+        form.count-price__form
+
+            //- Материал фасадов
+            fieldset.count-price__field
+                legend.count-price__name Материал фасадов
+                select.count-price__select#select-material(name="select-material")
+                    option Выберите материал
+                    option(value="ЛДСП") ЛДСП
+                    option(value="МДФ") МДФ
+                    option(value="Пластик") Пластик
+            
+            //- Выбор формы кухни
+            fieldset.count-price__field.kitchen-form#kitchen-form
+                legend.count-price__name Выберите форму кухни
+                input(type="hidden" value="" name="kitchen-form-value")
+                input.count-price__radio#kitchen-form-1(type="radio" name="kitchen-form")
+                label.kitchen-form__item.kitchen-form__item--1(for="kitchen-form-1")
+                    span.kitchen-form__name Прямая
+                    img.kitchen-form__img(src="images/form/kitchenform/img-1.png")
+                input.count-price__radio#kitchen-form-2(type="radio" name="kitchen-form")
+                label.kitchen-form__item.kitchen-form__item--1(for="kitchen-form-2")
+                    span.kitchen-form__name П-образная
+                    img.kitchen-form__img(src="images/form/kitchenform/img-2.png")
+                input.count-price__radio#kitchen-form-3(type="radio" name="kitchen-form")
+                label.kitchen-form__item.kitchen-form__item--1(for="kitchen-form-3")
+                    span.kitchen-form__name Левая угловая
+                    img.kitchen-form__img(src="images/form/kitchenform/img-3.png")
+                input.count-price__radio#kitchen-form-4(type="radio" name="kitchen-form")
+                label.kitchen-form__item.kitchen-form__item--1(for="kitchen-form-4")
+                    span.kitchen-form__name Правая угловая
+                    img.kitchen-form__img(src="images/form/kitchenform/img-4.png")
+            
+            //- Расположение плиты и мойки
+            fieldset.count-price__field.kitchen-setting#kitchen-setting
+                legend.count-price__name Укажите расположение мойки и плиты
+                input(type="hidden" name="setting-sink")
+                input(type="hidden" name="setting-stove")
+
+
+                .kitchen-setting__setting.kitchen-setting__setting--non-corn#setting-1
+                    .kitchen-setting__block.kitchen-setting__block--sink
+                        .kitchen-setting__item(data-setting="Мойка в левом углу")
+                            span.kitchen-setting__descr мойка в углу слева
+                        .kitchen-setting__item(data-setting="Мойка по центру слева")
+                            span.kitchen-setting__descr мойка по центру слева
+                        .kitchen-setting__item(data-setting="Мойка по центру справа")
+                            span.kitchen-setting__descr мойка по центру справа
+                        .kitchen-setting__item(data-setting="Мойка в право углу")
+                            span.kitchen-setting__descr мойка в углу справа
+                    .kitchen-setting__block.kitchen-setting__block--stove
+                        .kitchen-setting__item(data-setting="Плита в левом углу")
+                            span.kitchen-setting__descr плита в левом углу
+                        .kitchen-setting__item(data-setting="Плита по центру")
+                            span.kitchen-setting__descr плита по центру
+                        .kitchen-setting__item(data-setting="Плита в правом углу")
+                            span.kitchen-setting__descr плита в правом углу
+
+
+                .kitchen-setting__setting.kitchen-setting__setting--two-corn#setting-2
+
+                    .kitchen-setting__block.kitchen-setting__block--sink
+                        .kitchen-setting__item(data-setting="Мойка в слева")
+                            span.kitchen-setting__descr мойка слева
+                        .kitchen-setting__item(data-setting="Мойка в левом углу")
+                            span.kitchen-setting__descr мойка в углу слева
+                        .kitchen-setting__item(data-setting="Мойка в левом углу")
+                            span.kitchen-setting__descr мойка в углу слева
+                        .kitchen-setting__item(data-setting="Мойка по центру слева")
+                            span.kitchen-setting__descr мойка по центру слева
+                        .kitchen-setting__item(data-setting="Мойка по центру справа")
+                            span.kitchen-setting__descr мойка по центру справа
+                        .kitchen-setting__item(data-setting="Мойка в правом углу")
+                            span.kitchen-setting__descr мойка в углу справа
+                        .kitchen-setting__item(data-setting="Мойка в правом углу")
+                            span.kitchen-setting__descr мойка в углу справа
+                        .kitchen-setting__item(data-setting="Мойка справа")
+                            span.kitchen-setting__descr мойка справа
+
+                    .kitchen-setting__block.kitchen-setting__block--stove
+                        .kitchen-setting__item(data-setting="Плита слева")
+                            span.kitchen-setting__descr плита слева
+                        .kitchen-setting__item(data-setting="Плита по центру")
+                            span.kitchen-setting__descr плита по центру
+                        .kitchen-setting__item(data-setting="Плита справа")
+                            span.kitchen-setting__descr плита справа
+
+
+                .kitchen-setting__setting.kitchen-setting__setting--left-corn#setting-3
+
+                    .kitchen-setting__block.kitchen-setting__block--sink
+                        .kitchen-setting__item(data-setting="Мойка в слева")
+                            span.kitchen-setting__descr мойка слева
+                        .kitchen-setting__item(data-setting="Мойка в левом углу")
+                            span.kitchen-setting__descr мойка в углу слева
+                        .kitchen-setting__item(data-setting="Мойка в левом углу")
+                            span.kitchen-setting__descr мойка в углу слева
+                        .kitchen-setting__item(data-setting="Мойка по центру слева")
+                            span.kitchen-setting__descr мойка по центру слева
+                        .kitchen-setting__item(data-setting="Мойка по центру справа")
+                            span.kitchen-setting__descr мойка по центру справа
+                        .kitchen-setting__item(data-setting="Мойка в правом углу")
+                            span.kitchen-setting__descr мойка в углу справа                        
+
+                    .kitchen-setting__block.kitchen-setting__block--stove
+                        .kitchen-setting__item(data-setting="Плита слева")
+                            span.kitchen-setting__descr плита слева
+                        .kitchen-setting__item(data-setting="Плита по центру")
+                            span.kitchen-setting__descr плита по центру
+                        .kitchen-setting__item(data-setting="Плита в углу справа")
+                            span.kitchen-setting__descr плита в углу справа
+
+
+                .kitchen-setting__setting.kitchen-setting__setting--right-corn#setting-4
+
+                    .kitchen-setting__block.kitchen-setting__block--sink                        
+                        .kitchen-setting__item(data-setting="Мойка в левом углу")
+                            span.kitchen-setting__descr мойка в углу слева
+                        .kitchen-setting__item(data-setting="Мойка по центру слева")
+                            span.kitchen-setting__descr мойка по центру слева
+                        .kitchen-setting__item(data-setting="Мойка по центру справа")
+                            span.kitchen-setting__descr мойка по центру справа
+                        .kitchen-setting__item(data-setting="Мойка в правом углу")
+                            span.kitchen-setting__descr мойка в углу справа
+                        .kitchen-setting__item(data-setting="Мойка в правом углу")
+                            span.kitchen-setting__descr мойка в углу справа
+                        .kitchen-setting__item(data-setting="Мойка справа")
+                            span.kitchen-setting__descr мойка справа
+
+                    .kitchen-setting__block.kitchen-setting__block--stove
+                        .kitchen-setting__item(data-setting="Плита в углу слева")
+                            span.kitchen-setting__descr плита в углу слева
+                        .kitchen-setting__item(data-setting="Плита по центру")
+                            span.kitchen-setting__descr плита по центру
+                        .kitchen-setting__item(data-setting="Плита справа")
+                            span.kitchen-setting__descr плита справа
+
+            fieldset.count-price__field.kitchen-size#kitchen-size
+                legend.count-price__title Укажите размер стен                
+                .kitchen-size__block.kitchen-size__block--non-corn
+                    label.kitchen-size__label.kitchen-size__label--top
+                        input(type="text" name="size-top")
+                    .kitchen-size__image
+                        img(src="images/form/kitchen-form/img-1.png")
+                .kitchen-size__block.kitchen-size__block--two-corn                        
+                    label.kitchen-size__label.kitchen-size__label--top
+                        input(type="text" name="size-top")
+                    label.kitchen-size__label.kitchen-size__label--left
+                        input(type="text" name="size-left")
+                    label.kitchen-size__label.kitchen-size__label--right
+                        input(type="text" name="size-right")
+                    .kitchen-size__image
+                        img(src="images/form/kitchen-form/img-2.png")
+                .kitchen-size__block.kitchen-size__block--left-corn                        
+                    label.kitchen-size__label.kitchen-size__label--top
+                        input(type="text" name="size-top")
+                    label.kitchen-size__label.kitchen-size__label--left
+                        input(type="text" name="size-left")
+                    .kitchen-size__image
+                        img(src="images/form/kitchen-form/img-3.png")
+                .kitchen-size__block.kitchen-size__block--right-corn                        
+                    label.kitchen-size__label.kitchen-size__label--top
+                        input(type="text" name="size-top")
+                    label.kitchen-size__label.kitchen-size__label--right
+                        input(type="text" name="size-right")
+                    .kitchen-size__image
+                        img(src="images/form/kitchen-form/img-4.png")
+            
+            //- Высота верхни полок
+            fieldset.count-price__field.kithen-shelves#kitchen-shelves
+                legend.count-price__name Высота верхних полок
+                input(type="hidden" name="kitchen-shelves")
+                input.kitchen-shelves__button#radio-1(type="radio" name="shelves" checked)
+                label.kitchen-shelves__label(for="radio-1") 720 мм
+                input.kitchen-shelves__button#radio-2(type="radio" name="shelves")
+                label.kitchen-shelves__label(for="radio-2") 960 мм
+
+            fieldset.count-price__info.form-info#info
+                label.form-info__label
+                    span Ваше имя
+                    input(type="text" name="name")
+                label.form-info__label
+                    span Город
+                    input(type="text" name="city")
+                label.form-info__label
+                    span Номер телефона
+                    input(type="tel" name="phone")
+                label.form-info__label
+                    span Электронная почта
+                    input(type="email" name="email")
+                label.form-info__label
+                    span Пожелания
+                    textarea(name="wishes", cols="30", rows="10")
+            
+            .count-price__faq
+                p.count-price__text В течение рабочего дня наш менеджер свяжется с Вами и предложит Ваш индивидуальный проект с указанием стоимости и сроков изготовления. И пришлёт ссылку для предоплаты заказа.
+            
+            button.count-price__submit(type="submit") Отправить заявку
+            
+
