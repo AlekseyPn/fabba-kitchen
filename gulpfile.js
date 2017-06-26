@@ -63,7 +63,8 @@ gulp.task('copy', function () {
             dirs.source + '/fonts/**/*.{woff, woff2}',
             dirs.source + '/*.html',
             dirs.source + '/*.php',
-            dirs.source + '/global/js/*.js'
+            dirs.source + '/global/js/*.js',
+            dirs.source + '*.php'
         ], {
             base: dirs.source
         })
@@ -78,7 +79,7 @@ gulp.task('clean-icons-folder', function () {
 
 gulp.task('jshandler', function () {
     console.log('Обработка JS')
-    return gulp.src([dirs.node + '/jquery/dist/jquery.js', dirs.node + '/slick-carousel/slick/slick.js', dirs.source + '/blocks/**/*.js'])
+    return gulp.src([dirs.node + '/jquery/dist/jquery.js', dirs.node + '/slick-carousel/slick/slick.js',dirs.node + '/inputmask/dist/inputmask/inputmask.js', dirs.node + '/inputmask/dist/inputmask/jquery.inputmask.js', dirs.source + '/blocks/**/*.js'])
         .pipe(concat('script.min.js'))
         .pipe(plumber())
         .pipe(gulp.dest(dirs.build + '/js'))

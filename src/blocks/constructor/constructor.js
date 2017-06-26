@@ -20,26 +20,41 @@ var img
 var cls = ldspPatternSlider;
 
 var toggleSlider = function (slider) {
-    $(colorFacade).empty();    
+    $(colorFacade).empty();
     $('.constructor__slider, .constructor__color-slider').each(function () {
         if ($(this).hasClass('constructor__slider--show') && $(this).data('checked') == 'check') {
             cls = $(this);
         }
     })
-    
+
     $(cls).removeClass('constructor__slider--show');
     $(cls).removeAttr('data-checked');
     $(slider).addClass('constructor__slider--show');
     $(slider).attr('data-checked', 'check')
-    cls = slider;    
+    cls = slider;
 };
 
+function callModal(target) {
+    if (target.hasAttribute('id')) {
+        modal.classList.add('modal--open');
+        overlay.classList.add('overlay--show');
+    } else {
+        return false;
+    }
+}
 
+$(window).keyup(function(e) {   
+    if(e.keyCode === 27) {
+        $('#thankyou').removeClass('thankyou--show');
+        $('#overlay').removeClass('overlay--show');
+        $('#modal').removeClass('modal--open');
+    }
+})
 // обработчик для фильтра по цвету фасада
 var toggleColorFacade = function (color) {
-    
+
     var src = [];
-    
+
 
     if (cls !== undefined) {
         img = cls.querySelectorAll('.constructor__slide');
@@ -49,24 +64,24 @@ var toggleColorFacade = function (color) {
         var maxImg = img.length;
         for (i; i < maxImg; i++) {
             if ($(img[i]).data('color') === color && !($(img[i]).hasClass('slick-cloned'))) {
-                src.push($(img[i]).attr('src'))                
+                src.push($(img[i]).attr('src'))
             }
-        
+
         }
 
-        if (src.length == 0) {            
+        if (src.length == 0) {
             return false
         } else {
             var j = 0;
             var maxSrc = src.length;
             if (slick) {
-                $(colorFacade).slick('unslick')                
+                $(colorFacade).slick('unslick')
                 $(colorFacade).empty();
                 for (j; j < maxSrc; j++) {
                     $(colorFacade).append('<img width="1024" height="768" class="constructor__slide" src="' + src[j] + '">')
                 }
                 $(cls).removeClass('constructor__slider--show');
-                $(colorFacade).addClass('constructor__slider--show');                 
+                $(colorFacade).addClass('constructor__slider--show');
                 if (src.length > 1) {
                     $(colorFacade).slick({
                         slidesToShow: 1,
@@ -74,11 +89,11 @@ var toggleColorFacade = function (color) {
                         arrows: true,
                         prevArrow: '<button type="button" class="constructor__arrow  constructor__arrow--prev"></button>',
                         nextArrow: '<button type="button" class="constructor__arrow  constructor__arrow--next"></button>'
-                    });                    
+                    });
                 }
-                if(src.length < 1) {
+                if (src.length < 1) {
                     slick = false
-                }                
+                }
             } else {
                 $(colorFacade).empty();
                 for (j; j < maxSrc; j++) {
@@ -87,7 +102,7 @@ var toggleColorFacade = function (color) {
 
                 $(cls).removeClass('constructor__slider--show');
                 $(colorFacade).addClass('constructor__slider--show');
-                
+
                 if (src.length > 1) {
                     $(colorFacade).slick({
                         slidesToShow: 1,

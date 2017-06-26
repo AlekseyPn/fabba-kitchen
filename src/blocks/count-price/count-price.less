@@ -24,6 +24,7 @@
 
     &__select {
         width: 100%;
+        max-width: 300px;
         padding: 10px 5px;
         font-size: @font-size;
         background-color: transparent;
@@ -47,31 +48,35 @@
         color: @white;
         background-color: @black;
     }
+
+    &__faq {
+        width: 100%;
+    }
+
+    &__submit {
+        display: block;
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        background-color: @color-main;
+    }      
 }
 
-.kitchen-setting {
-    text-align: center;
+@media(min-width: @screen-md) {
+    .count-price{
+        &__faq {
+            display: inline-block;
+            width:49%;
+            padding: 50px 10px;
+            padding-left: 40px;            
+            box-sizing: border-box;            
+        }
 
-    &__wrapper {
-        position: relative;
-        text-align: center;
-    }
-
-    &__block {
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    &__wrapper--non-corn {
-
-        .kitchen-setting__block {
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
+        &__text {
+            padding: 20px;
+            background-color: @color-main;
         }
     }
 }
+

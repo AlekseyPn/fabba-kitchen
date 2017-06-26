@@ -33,7 +33,12 @@
 
     &__wrapper {
         position: relative;
+        display: none;
+        flex-direction: column;
         text-align: center;
+        &--show {
+            display: flex;
+        }
     }
 
     &__block {
@@ -44,14 +49,472 @@
         height: 162px;
         background-image: url(../images/form/bg.png);
         background-repeat: no-repeat;
-        background-position: 0 0;
-        background-size: 300px auto;
+        background-size: 650px auto;       
     }
 
     &__wrapper--non-corn {
 
         .kitchen-setting__block {
-            background-position: -375px 0;
+            background-position: -349px 0;
+        }
+
+        .kitchen-setting__descr {
+            left: -20px;
+        }        
+    }
+
+    &__wrapper--two-corn {
+        .kitchen-setting__block {
+            background-position: -1px 0;
+        }
+        .kitchen-setting__item--center-left {
+            left: 91px;
+        }
+        .kitchen-setting__item--center-right {
+            right: 91px;
+        }
+    }
+
+    &__wrapper--left-corn {
+        .kitchen-setting__block {
+            background-position: -1px -216px;
+        }
+
+        .kitchen-setting__item--center-left {
+            left: 131px;
+        }
+        .kitchen-setting__item--center-right {
+            right: 20px;
+        }
+
+        .kitchen-setting__descr {
+            left: -20px;
+        } 
+    }
+
+     &__wrapper--right-corn {
+        .kitchen-setting__block {
+            background-position: -350px -215px;
+        }
+
+        .kitchen-setting__item--center-left {
+            left: 20px;
+        }
+        .kitchen-setting__item--center-right {
+            right: 131px;
+        }
+    }
+
+    &__item {
+        position: absolute;
+        top: 3px;
+        width: 54px;
+        height: 49px;
+        background-image: url(../images/form/sprite.png);
+        background-repeat: no-repeat;
+        background-position: 0;
+        cursor: pointer;
+
+        &--left {            
+            left: 10px;
+            background-position: -152px 0;
+        }
+
+        &--left-corn {
+            left: 30px;                
+            background-position: -98px 0;
+        }
+        
+        &--left-center {
+            top: 36px;
+            left: 3px;
+            width: 49px;
+            height: 54px;
+            background-position: -49px 0;
+        }
+
+        &--left-bottom {
+            top: 93px;
+            left: 3px;
+            width: 49px;
+            height: 54px;
+            background-position: 0 0;
+        }
+
+        &--right {            
+            right: 10px;
+            background-position: -206px 0;   
+        }
+
+        &--right-corn {
+            right: 30px;
+            background-position: -260px 0;
+        }
+
+        &--right-center {
+            top: 36px;
+            right: 3px;
+            width: 49px;
+            height: 54px;
+            background-position: -314px 0;
+        }
+
+        &--right-bottom {
+            top: 93px;
+            right: 3px;
+            width: 49px;
+            height: 54px;
+            background-position: 0 0;
+        }
+
+        &--center-left {
+            left: 85px;
+        }
+
+        &--center-right {
+            right: 85px;
+        }
+
+        &--stove {
+            top: 2px;
+            width: 63px;
+            height: 53px;
+            background-position: -363px -63px;
+
+            &--bottom {
+                top: 85px;
+                width: 53px;
+                height: 63px;
+                background-position: -363px 0;
+            }
+
+            &--left {
+                left: 10px;               
+            }
+
+            &--center {
+                left: (300px / 2) - (54 / 2);
+            }
+
+            &--right {
+                right: 10px;                
+            }
+        }
+
+    }
+
+    &__item--left-corn &__descr{
+        left: 20px;
+        bottom: -33px;
+    }
+
+    &__item--center-left &__descr,
+    &__item--center-right &__descr {
+        left: -20px;
+    }
+
+    &__item--left-center &__descr {
+        left: 50px;
+        bottom: 0px;
+    }
+
+    &__item--left-bottom &__descr {
+        left: 50px;
+        bottom: 20px;
+    }
+
+    &__item--right-corn &__descr{
+        right: 20px;
+        bottom: -33px;
+    }
+
+    &__item--right-center &__descr {
+        right: 50px;
+        bottom: 0px;
+    }
+
+    &__item--right-bottom &__descr {        
+        right: 50px;
+        bottom: 20px;
+    }
+
+    &__descr {
+        position: absolute;
+        bottom: -40px;        
+        display: none;
+        vertical-align: top;
+        width: 100px;
+        font-size: @font-size - 0.3;
+        line-height: 1;
+    }    
+
+    .count-price__radio:checked + &__item--left {
+        background-position: -152px -108px;
+    }
+
+    .count-price__radio:checked + &__item--left-corn {
+        background-position: -98px -108px;  
+    }
+
+    .count-price__radio:checked + &__item--left-center {
+        background-position: -49px -108px;
+    }
+
+    .count-price__radio:checked + &__item--left-bottom,
+    .count-price__radio:checked + &__item--right-bottom {
+            background-position: 0 -108px;
+    }
+
+    .count-price__radio:checked + &__item--right {
+        background-position: -206px -108px;
+    }
+
+    .count-price__radio:checked + &__item--right-corn {
+        background-position: -260px -108px;  
+    }
+
+    .count-price__radio:checked + &__item--right-center {
+        background-position: -314px -108px;
+    }
+
+    .count-price__radio:checked + &__item--stove {
+        background-position: -489px -63px
+    }
+
+    .count-price__radio:checked + &__item--stove--bottom {
+        background-position: -469px 0;
+    }
+
+    &__block--stove &__item--left-bottom &__descr {
+        left: 50px;
+        bottom: 20px;
+    }
+
+    &__item--stove--center &__descr {
+        left: -20px;
+    }
+
+    &__block--stove &__item--right-bottom &__descr {
+        right: 50px;
+        bottom: 20px;
+    }
+
+    .count-price__radio:checked + &__item > &__descr {
+        display: block;
+    }
+}
+
+
+.kitchen-size {
+    text-align: center;
+    &__block {
+        position: relative;
+        display: none;
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50px 0;
+        &--show {
+            display: block;
+        }
+    }
+
+    &__image {
+        text-align: center;
+    }
+
+    &__label {
+        position: absolute;
+        top: 0;        
+        width: 100px;
+        text-align: justify;                
+
+        &--top {
+            top: 15px;
+            left: (250px/2) - (65 / 2);
+        }
+
+        &--left {
+            top: 80px;
+            left: -40px;            
+        }
+
+        &--right {
+            top: 80px;
+            right: -40px;
+        }
+    }
+
+    &__input {    
+        display: inline-block;        
+        width: 65%;
+        margin-right: 5px;
+        background-color: @gray-lightest;
+        border: 1px solid @gray;
+        box-sizing: border-box;
+        outline: none;
+        &:hover,
+        &:focus {
+            border-color: @color-main;
+        }
+    }
+
+    &__block--two-corn &__label--left &__input,
+    &__block--left-corn &__label--left &__input {        
+        margin-right: 0;               
+    }
+
+    &__block--two-corn &__label--left,
+    &__block--left-corn &__label--left {
+        text-align: right;
+    }
+}
+
+.kitchen-shelves {
+    &__wrapper {
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto; 
+        font-size: 0;       
+    }
+
+    &__button {
+        display: none;
+    }
+
+    &__label {
+        display: inline-block;        
+        width: 48%;
+        margin-right: 4%;
+        padding: 10px;
+        font-size: @font-size;
+        text-align: center;
+        background-color: @color-main;
+        box-sizing: border-box;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &__button:checked + &__label {
+        color: @white;
+        background-color: @black;
+    }
+}
+
+.form-info {
+    &__wrapper {
+        width: 100%;
+    }
+
+    &__label {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    &__input {      
+        width: 60%;        
+        margin-right: 5px;
+        padding: 0 10px;
+        background-color: @gray-lightest;
+        border: 1px solid @gray;
+        box-sizing: border-box;
+        outline: none;
+        &:hover,
+        &:focus {
+            border-color: @color-main;
+        }
+        
+        &:not(:focus):not(:placeholder-shown):invalid {
+            background-color: fade(@error, 50%);
+        }
+        &:not(:focus):not(:placeholder-shown):valid {
+            background-color: fade(@success, 40%);
+        }
+
+        &--textarea {
+            padding: 10px;
+        }
+    }
+
+    &__input:not(&__input--textarea) {
+        max-height: 30px;
+    }
+
+    &__name {        
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    &__error-msg {
+        position: absolute;
+        top: -25px;
+        right: -122px;
+        display: inline-block;
+        padding: 5px;
+        font-size: @font-size - 0.2;
+        color: @white;
+        border-radius: 5px;
+        border-bottom-left-radius: 0;
+        background-color: @error;
+        opacity: 0;
+        height: 0;
+        &--show {
+            opacity: 1;
+            height: auto;
+        }
+    }  
+        
+}
+
+@media(min-width: @screen-sl) {
+    .kitchen-form {
+        font-size: 0;
+        &__item {
+            width: 49%;
+        }
+    }
+}
+
+@media(min-width: @screen-md) {
+    .kitchen-setting {
+        &__wrapper {     
+            flex-direction: row;       
+            justify-content: space-around;
+        }
+    }
+    .form-info {
+        &__label {
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        &__input {
+            width: 65%;
+        }
+
+        &__name {
+            width: auto;
+        }
+
+        &__wrapper {
+            display: inline-block;
+            width: 49%;
+        }
+    }
+}
+
+@media(min-width: @screen-lg) {
+    .kitchen-form {
+        font-size: 0;
+        &__item {
+            width: 23%;
         }
     }
 }
